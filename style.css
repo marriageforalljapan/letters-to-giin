@@ -1,0 +1,401 @@
+/*フォントを設定*/
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.75;
+}
+
+/*ページタイトル*/
+.banner {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+
+.title{
+  margin-top: 150px;
+  margin-bottom: 10px;
+}
+
+
+.heading02 {
+	position: relative;
+	font-size: 45px;
+	text-align: center;
+	border-bottom: 5px solid #dddddd;
+  margin-right: 15%;
+  margin-left: 15%;
+}
+
+.heading02::after {
+	content: '';
+	position: absolute;
+	bottom: -5px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 70px;
+	height: 5px;
+	background-color: #CB2F2A;
+}
+
+/*step-one*/
+.step-one h2 {
+  position: relative;
+  text-align: center;
+  margin-top: 150px;
+  font-size: 36px;
+  color: #1A1A1A;
+  padding: 2rem 3rem;
+  background: #f1f1f4;
+}
+
+.step-one-content{
+  position: relative;
+  text-align: center;
+  margin-bottom: 100px;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 16px;
+  color: #1A1A1A;
+}
+
+iframe{
+  margin-top: 100px;
+  width: 90%;
+  height: 1500px; 
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+
+/*step-two*/
+.step-two h2 {
+  position: relative;
+  text-align: center;
+  margin-top: 200px;
+  font-size: 36px;
+  color: #1A1A1A;
+  padding: 2rem 3rem;
+  background: #f1f1f4;
+}
+
+.step-two-content{
+  position: relative;
+  text-align: center;
+  margin-top: 55px;
+  margin-bottom: -15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 200px;
+  font-size: 16px;
+  color: #1A1A1A;
+}
+
+/* 検索ボックスのスタイル */
+.controls {
+  margin-top: -115px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+  font-size: 25px;
+  font-weight: 300;
+  padding: 10px 15px 10px 15px;
+  text-overflow: ellipsis;
+  width: 650px;
+}
+
+.controls:focus {
+  border-color: #000082;
+}
+
+.senkyokumap {
+  position: relative; /* 相対位置指定に変更 */
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: 60vh; /* 画面の縦方向の半分の高さ */
+  min-height: 450px;
+  min-width: 450px;
+}
+
+#infoWindow {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  font-size: 40px;
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 20px;
+  width: 300px;
+  z-index: 9999;
+  transition: right 0.3s;
+}
+
+#closeButton {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+
+/*step-three*/
+.step-three h2 {
+  position: relative;
+  text-align: center;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 36px;
+  color: #1A1A1A;
+  padding: 2rem 3rem;
+  background: #f1f1f4;
+}
+
+  
+.attention-title{
+  position: relative;
+  text-align: center;
+  margin-top: 45px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 28px;
+  font-weight: bold;
+  color: #EC0000;
+}
+
+.attention-content{ 
+  position: relative;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 16px;
+  color: #1A1A1A;
+}
+
+.howtowrite-title h3{
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 100px;
+  padding: 10px 75px 10px 75px;
+  font-size: 32px;
+  color: #ffffff;
+  background-color: #2cac6e;
+  border-radius: 30px;
+}
+
+.howtowrite-title p{
+  position: relative;
+  text-align: center;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #1A1A1A;
+}
+
+.howtowrite-content{
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 25px;
+  padding: 15px 60px 30px 60px;
+  background-color: #f1f1f4;
+}
+
+
+.howtowrite-content h4{
+  position: relative;
+  font-size: 24px;
+  color: #2cac6e;
+}
+
+
+.howtowrite-content p{
+  position: relative;
+  padding-left: 30px;
+  margin-top:-10px;
+  font-size: 16px;
+  color: #1A1A1A;
+}
+
+
+.callout1{
+  color:#000082;
+}
+
+.callout2{
+  color:#000082;
+}
+
+/*step-four*/
+.step-four h2 {
+  position: relative;
+  text-align: center;
+  margin-top: 200px;
+  font-size: 36px;
+  color: #1A1A1A;
+  padding: 2rem 3rem;
+  background: #f1f1f4;
+}
+
+.step-four-content{
+  position: relative;
+  text-align: center;
+  margin-top: 55px;
+  margin-bottom: -15px;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 16px;
+  color: #1A1A1A;
+}
+
+.attention-2{
+  position: relative;
+  text-align: center;
+  margin-top: 55px;
+  margin-left: 5%;
+  margin-right: 5%;
+  font-size: 16px;
+  color: #EC0000;
+}
+
+
+
+/* ボタン全体 */
+.flowbtn12{
+  font-family:'Verdana',sans-serif;	
+  border-radius: 4px;
+  display:inline-block;
+  width:90%;
+  font-size:20px;
+  transition:.4s;	
+  text-decoration:none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  }
+  /* ボタン内テキストマウスホバー時 */
+  .flowbtn12:hover{
+  color:#fff!important;
+  text-decoration:none;
+  }
+  /* Twitter */
+  .flowbtn12.fl_tw2{
+  border:solid 1px #55acee;
+  color:#55acee;
+  }
+  /* Twitterマウスホバー時 */
+  .flowbtn12.fl_tw2:hover{
+  border:solid 1px #55acee;
+  background:#55acee;
+  }
+  /* Facebook */
+  .flowbtn12.fl_fb2{
+  border:solid 1px #3b5998;
+  color:#3b5998;
+  }
+  /* Facebookマウスホバー時 */
+  .flowbtn12.fl_fb2:hover{
+  border:solid 1px #3b5998;
+  background:#3b5998;
+  }
+  /* LINE */
+  .flowbtn12.fl_li2{
+  border:solid 1px #00c300;
+  color:#00c300;
+  }
+  /* LINEマウスホバー時 */
+  .flowbtn12.fl_li2:hover{
+  border:solid 1px #00c300;
+  background:#00c300;
+  }
+  /* ボタン内テキスト調整 */
+  .flowbtn12 span{
+  font-size:14px;	
+  position:relative;
+  left:8px;
+  bottom:2px;	
+  }
+  /* ulタグの内側余白を０にする */
+  ul.snsbtniti2{
+  padding:0!important;
+  list-style-type:none!important;
+  }
+  /* ボタン全体の位置 */
+  .snsbtniti2{
+  display:flex;
+  justify-content:space-around;
+  margin-top: 75px;
+  margin-left: 5%;
+  margin-right: 5%;
+  }
+  /* ボタン同士の余白 */
+  .snsbtniti2 li{
+  flex:0 0 30%;
+  text-align:center !important;
+  }
+
+
+.sign-off{
+  background-color: #f1f1f4;
+  margin-top: 300px;
+}
+
+
+.thanks-1{
+  position: relative;
+  text-align: center;
+  padding-top: 100px;
+  font-size:24px;
+  color: #1A1A1A
+}
+
+.numbers-of-letters {
+  position: relative;
+  display: inline-block;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(to right,#e60000,#f39800,#fff100,#009944,#0068b7,#1d2088,#920783);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 250px;
+  font-weight: 900;
+  margin-top: -50px;
+}
+
+.thanks-2{
+  position: relative;
+  text-align: center;
+  margin-top: -250px;
+  padding-bottom: 100px;
+  font-size:24px;
+  color: #1A1A1A
+}
+
+footer{
+  width: 100%;
+  height: 200px;
+  background-color: #EC0000;
+  color: white;
+  padding-top: 100px;
+  text-align: center; 
+  margin: 0;
+}
+
+ul.footer-menu li {
+display: inline;
+font-size: 120%;
+}
+
+a{
+  color: white;
+}
