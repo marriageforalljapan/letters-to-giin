@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G1RMVCP25C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-G1RMVCP25C');
+    </script>
+    <title>国会議員に手紙を書こう！</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="device-width,user-scalable=no">
+    <meta name="description" content="結婚の平等（同性婚の法制化）の実現のために、国会議員に手紙を書いて想いを届けよう！">
+    <meta property="og:url" content="https://suigyozatabetai.github.io/write_letters/">
+    <meta property="og:title" content="国会議員に手紙を書こう！">
+    <meta property="og:description" content="結婚の平等（同性婚の法制化）の実現のために、国会議員に手紙を書いて想いを届けよう！">
+    <meta property="og:image" content="https://suigyozatabetai.github.io/write_letters/Banner_rainbow.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="国会議員に手紙を書こう！">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="twitter:title" content="国会議員に手紙を書こう！"></meta>
+    <meta property="twitter:description" content="結婚の平等（同性婚の法制化）の実現のために、国会議員に手紙を書いて想いを届けよう！"></meta>
+    <meta property="twitter:image" content="https://suigyozatabetai.github.io/write_letters/Banner_rainbow.jpg"></meta>
+    <meta property="twitter:site" content="@marriage4all_">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA92lxiGSFgBAVYrhoS9tyZ4iwj2GTWXIQ&callback=initAutocomplete&libraries=places,marker&v=weekly"
+      defer
+    ></script>
+    <link rel="icon" href="./favicon.ico" id="favicon">
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <script src="./index.js"></script>
+  </head>
+
+  <body>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
+    </style>
+
+   <header>
+    <div class="banner-animation">
+      <img src="Banner_rainbow.jpg" class="banner">
+    </div>
+    <div class="title">
+      <h1 class="heading02">
+        国会議員に手紙を書こう！
+      </h1>
+    </div>
+   </header>
+
+   <div class="content">
+      <div class="step-one">
+        <h2>
+          ①手紙を書く議員を決める
+        </h2>
+
+        <div class="step-one-content">
+          <br>
+          お住まいの選挙区から選出されている議員を選ぶことがオススメです！
+          <br>
+          以下のプルダウンからお住まいの都道府県を選択し、
+          <br>
+          フィルターをかけてください。
+          <br>
+          <br>
+          「衆議院の小選挙区から選出されている議員に書きたいけど、
+          <br>
+          選挙区が分からない...」 という方は、
+          <br>
+         ②に進んでマップから選挙区を調べてください🔎
+        </div>
+
+        <div div="giin-gallery">
+          <iframe src="https://lookerstudio.google.com/embed/reporting/c1182424-ddbc-4070-98bd-12e129da9778/page/NT4UD" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+      
+      <div class="step-two">
+        <h2>
+          ②衆議院の小選挙区が分からないときは...
+        </h2>
+
+        <div class="step-two-content">
+          こちらは衆議院の小選挙区を調べるためのマップです。
+          <br>
+          下記の検索ボックスに「住所」または「郵便番号」を入力してください。
+          <br>
+          マップに刺さったピンの周辺をタップすると、
+          <br>
+          衆議院の小選挙区が表示されます。
+        </div>
+
+        <div class="search-box">
+          <input
+          id="pac-input"
+          class="controls"
+          type="text"
+          placeholder="住所/郵便番号を入力"
+          />
+        </div>
+
+      <div id="map" class="senkyokumap"></div>
+     </div>
+
+
+      <div class="step-three">
+          <h2>
+            ③手紙を書く
+          </h2>
+          <div class="attention">
+            <p class="attention-title">
+              重要！
+            </p>
+            <p  class="attention-content">
+              誹謗中傷や攻撃的な内容にならないように気をつけましょう。
+              <br>
+              賛成の議員さんはますます熱心に取り組むように。
+              <br>
+              どちらとも言えない議員さんや反対の議員さんは、
+              <br>
+              関心を持って理解を深めるように。
+              <br>
+              あなたのこと、想い、考えなどを丁寧に伝えることで、
+              <br>
+              国会に味方を増やしていきましょう❤️‍🔥
+            </p>
+          </div>
+
+          <div class="howtowrite-title">
+            <h3>手紙の書き方の一例</h3>
+            <p>
+              この通りではなくても、あなたの書きたいこと、あなたの書き方で
+              <br>
+              もちろんOKです！（シンプルな一言でも◎）
+              <br>
+              ひとつの参考にしてみてくださいね！
+            </p>
+          </div>
+
+          <div class="howtowrite-content">
+            <h4 class="top">1. 挨拶と自己紹介</h4>
+            <p>
+              議員さんの選挙区に住んでいる場合、お住まいの地域を記すことは効果的です。
+              <br>
+              <span class="callout1">
+                ただし気が進まない場合は記さなくても構いません。
+                <br>
+                ご自身の状況に応じてどうするかご検討ください。
+            </span>
+            </p>
+
+            <h4>2. 手紙を書いた理由、目的</h4>
+            <p>
+              議員さんが現在評している結婚の平等（同性婚の法制化）に対する立場や意見について、あなたの立場や意見についても触れながら目的を伝えてみましょう。
+            </p>
+
+            <h4>3. 具体的なメッセージ</h4>
+            <p>
+              今どのように問題があると考えているのか、そして結婚の平等（同性婚の法制化）を実現すべき理由について丁寧な説明を書いてもよいかもしれません。
+              <br>
+              または、あなたのエピソードやあなたにとって大切な想いについて綴るというのも、よいかもしれません。
+            </p>
+
+            <h4>4. 日付、名前、連絡先 など</h4>
+            <p>
+              ご自身の名前や連絡先を記しても問題ないと思われる方は記してください。
+              <br>
+              ※任意ですので無理に書く必要はありません。
+              <br>
+              <span class="callout2">
+                住所を全部書きたくない方は、お住まいの都道府県名や市区町村名、選挙区名（東京1区など）だけを書いて、議員さんにアピールするのもおすすめです！
+              </span>
+            </p>
+          </div> 
+        </div> 
+
+        <div class="step-four">
+          <h2>
+            ④共有する
+          </h2>
+          <div class="step-four-content">
+            手紙を書いたら、SNSで
+            <br>
+            「# 国会議員に手紙を書こう」のハッシュタグをつけて、
+            <br>
+            報告してください！
+            <br>
+            議員さんをタグ付けするのもGOOD！
+          </div>
+
+          <div class="attention-2">
+            ⚠︎
+            <br>
+            思いがけず個人情報を発信しないように
+            <br>
+            十分注意をしてください
+          </div>
+
+          <ul class="snsbtniti2">
+            <li><a  href="http://twitter.com/share?url=https://suigyozatabetai.github.io/write_letters/&text=結婚の平等の実現を応援！%0a%0a%23国会議員に手紙を書こう%0a%23結婚の平等にYES%0a&via=marriage4all_" target="_blank" rel="nofollow noopener noreferrer" class="flowbtn12 fl_tw2"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
+            <li><a href="http://www.facebook.com/share.php?u=https://suigyozatabetai.github.io/write_letters/"  target="_blank" rel="nofollow noopener noreferrer" class="flowbtn12 fl_fb2"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
+            <li><a href="https://social-plugins.line.me/lineit/share?url=https://suigyozatabetai.github.io/write_letters/" target="_blank" rel="nofollow noopener noreferrer" class="flowbtn12 fl_li2"><i class="fab fa-line"></i><span>LINE</span></a></li>
+          </ul>
+
+        </div> 
+
+
+
+
+        <div class="sign-off">
+          <P class="thanks-1">
+            マリフォーのイベントでは、これまでに
+          </P>
+
+          <p class="numbers-of-letters">
+            789
+          </p>
+
+          <p class="thanks-2">
+            通のお手紙をいただきました🤍
+            <br>
+            結婚の平等が実現するその日まで。
+            <br>
+            皆様のご協力、よろしくお願いします！
+          </p>
+      </div> 
+
+
+    <footer>
+      <ul class="footer-menu">
+        <li><a href="https://www.marriageforall.jp/">公式ホームページ </a></li>
+        <li>　|　</li>
+        <li><a href="https://meter.marriageforall.jp/"> マリフォー国会メーター</a></li>
+       </ul>
+      <p>© 公益社団法人MarriageForAllJapan - 結婚の自由をすべての人に</p>
+    </footer>
+
+  </body>
+</html>
