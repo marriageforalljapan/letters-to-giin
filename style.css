@@ -155,6 +155,15 @@ body {
   color: #1A1A1A;
 }
 
+.senkyo-table{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  object-fit: cover;
+  margin-top: 15px;
+}
+
 
 /*氏名検索*/
 .sarch-form-title{
@@ -170,7 +179,7 @@ body {
   border: 2px solid #2589d0;
   border-radius: 5px;
   margin-left: 10%;
-  margin-right: 30%;
+  margin-right: 20%;
 }
 
 .search-form-002 input {
@@ -329,6 +338,12 @@ p {
   color: #ffffff;
 }
 
+/*議員数*/
+#filteredItemCount{
+  font-size: 16px;
+  color:#1A1A1A;
+  text-align: center;
+}
 
 /*議員カード*/
 #cardsContainer {
@@ -512,7 +527,7 @@ p {
   margin-top: -50px;
   margin-left: 10%;
   margin-right: 10%;
-  height: 40vh; /* 画面の縦方向の半分の高さ */
+  height: 70vh; /* 画面の縦方向の半分の高さ */
 }
 
 #infoWindow {
@@ -988,7 +1003,7 @@ p {
   margin-top: -50px;
   margin-left: 10%;
   margin-right: 10%;
-  height: 60vh; /* 画面の縦方向の半分の高さ */
+  height: 70vh; /* 画面の縦方向の半分の高さ */
 }
 
 /*step-two*/
