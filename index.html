@@ -50,7 +50,7 @@
    <header>
     <div class="title">
       <h1 class="heading02">
-        国会議員に手紙を書こう！
+        国会議員に<br>手紙を書こう！
       </h1>
     </div>
    </header>
@@ -58,34 +58,41 @@
   
     <h2 class="contents-01">
       <span>01</span>
-      手紙を書く議員を決める
+      <a href="#heading1">手紙を書く議員を決める</a>
     </h2>
     <h2 class="contents-02">
       <span>02</span>
-      手紙を書く
+      <a href="#heading2">手紙を書く</a>
     </h2>
     <h2 class="contents-03">
       <span>03</span>
-      SNSで共有する
+      <a href="#heading3">SNSで共有する</a>
     </h2>
 
 
    <div class="content">
       <div class="step-one">
-        <h2 class="heading-1" data-number="01">
-          手紙を書く議員を決める
-        </h2>
+        <a id="heading1">
+          <h2 class="heading-1" data-number="01">
+            手紙を書く議員を決める
+          </h2>
+        </a>>
 
         <div class="step-one-content">
+          国会議員の選出方法は衆議院の小選挙区制と比例代表制、参議院の選挙区制と比例代表制の4種類があります。
           <br>
-          お住まいの選挙区から選出されている議員を選ぶことがオススメです！
+          簡単な違いを示した図がこちらになります。
           <br>
-          以下のプルダウンからお住まいの都道府県を選択し、フィルターをかけてください。
+          <img src="senkyo-table.png" class="senkyo-table" alt="選挙制度の仕組み">
+          <br>
+          再選を目指す議員にとって、自らの選挙区に住んでいる有権者の声は無視できません。
+          <br>
+          そういった意味で、お住まいの選挙区から選出されている議員を選ぶことをオススメしています！
           <br>
           <br>
-          「衆議院の小選挙区から選出されている議員に書きたいけど、選挙区が分からない...」 という方は、
+          衆議院・比例代表制、参議院・選挙区制、参議院・比例代表制から選出された議員に宛てて書く場合は、基本的にお住まいの都道府県を以下のプルダウンから選択し、出てきた議員の名から選んでいただければOKです。
           <br>
-         ②に進んでマップから選挙区を調べてください🔎
+          衆議院・小選挙区制のみ選挙区がイレギュラーなので、選挙区が分からないという方は、下のマップを使って調べてみてください🔎
         </div>
 
       
@@ -189,6 +196,9 @@
         </p>
 
 
+        <p id="filteredItemCount"></p>
+
+
 
         <div id="cardsContainer"></div>
           <!-- 値を表示するためのHTMLを追加 -->
@@ -254,9 +264,11 @@
 
 
       <div class="step-two">
+        <a id="heading2">
           <h2 class="heading-2" data-number="02">
             手紙を書く
           </h2>
+        </a>
           <div class="attention">
             <p class="attention-title">
               重要！
@@ -321,9 +333,11 @@
         </div> 
 
         <div class="step-three">
-          <h2 class="heading-3" data-number="03">
-            SNSで共有する
-          </h2>
+          <a id="heading3">
+            <h2 class="heading-3" data-number="03">
+              SNSで共有する
+            </h2>
+          </a>
           <div class="step-three-content">
             手紙を書いたら、SNSで「# 国会議員に手紙を書こう」のハッシュタグをつけて、報告してください！
             <br>
