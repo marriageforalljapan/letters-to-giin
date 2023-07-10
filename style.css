@@ -12,7 +12,7 @@ body {
 
 .heading02 {
 	position: relative;
-	font-size: 20px;
+	font-size: 30px;
 	text-align: center;
 	border-bottom: 5px solid #dddddd;
   margin-right: 15%;
@@ -512,7 +512,7 @@ p {
   margin-top: -50px;
   margin-left: 10%;
   margin-right: 10%;
-  height: 30vh; /* 画面の縦方向の半分の高さ */
+  height: 40vh; /* 画面の縦方向の半分の高さ */
 }
 
 #infoWindow {
@@ -740,11 +740,12 @@ p {
 /*バナー*/
 .banner {
   display: block;
-  width: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 200px;
+  width: 80%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
-  margin-top:100px;
-  margin-bottom:10px;
 }
 
 /*フッター*/
@@ -752,7 +753,7 @@ p {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 25px 10px 10px;
+  padding: 50px 10px 50px 10px;
   background-color: #ec0000;
 }
 
@@ -980,6 +981,14 @@ p {
 .heading-038::after {
   top: calc(50% + 3px);
   left: 5px;
+}
+
+.senkyokumap {
+  position: relative; /* 相対位置指定に変更 */
+  margin-top: -50px;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 60vh; /* 画面の縦方向の半分の高さ */
 }
 
 /*step-two*/
