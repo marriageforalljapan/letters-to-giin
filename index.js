@@ -61,7 +61,7 @@ function clearCards() {
 }
 
 var jsonData; // JSONデータを保持する変数
-var maxItemsToShow = 20; // 一度に表示する最大項目数
+var maxItemsToShow = 12; // 一度に表示する最大項目数
 var currentIndex = 0; // 現在のインデックス
 var currentFilters = {
   name: "",
@@ -99,6 +99,9 @@ function showMoreItems() {
   } else {
     moreButtonContainer.style.display = "none"; // 「もっと見る」ボタンを非表示
   }
+
+  var displayedItemCount = currentIndex; // 表示されたデータの件数
+  document.getElementById("itemCount").textContent = "表示されたデータの件数: " + displayedItemCount;
 }
 
 
@@ -115,6 +118,7 @@ function applyFilters() {
     return nameMatch && houseMatch && prefectureMatch && sanpiMatch && partyMatch;
   });
 
+  var filteredItemCount = filteredData.length; // ヒット件数
   jsonDataFiltered = filteredData; // フィルター後のデータを保持
 
   createCards(filteredData, 0, Math.min(maxItemsToShow, filteredData.length));
@@ -125,6 +129,9 @@ function applyFilters() {
   } else {
     moreButtonContainer.style.display = "none"; // 「もっと見る」ボタンを非表示
   }
+
+  document.getElementById("filteredItemCount").textContent =  "議員数：" + filteredItemCount +"名";
+
 }
 
 
