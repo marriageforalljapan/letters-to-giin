@@ -34,8 +34,8 @@ body {
 .contents-01 {
   position: relative;
   margin-top: 75px;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 12%;
+  margin-right: 12%;
   padding: 10px 10px;
   overflow: hidden;
   border: 2px solid #2589d0;
@@ -64,8 +64,8 @@ body {
 
 .contents-02 {
   position: relative;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 12%;
+  margin-right: 12%;
   padding: 10px 10px;
   overflow: hidden;
   border: 2px solid #2589d0;
@@ -94,8 +94,8 @@ body {
 
 .contents-03 {
   position: relative;
-  margin-left: 15%;
-  margin-right: 15%;
+  margin-left: 12%;
+  margin-right: 12%;
   padding: 10px 10px;
   overflow: hidden;
   border: 2px solid #2589d0;
@@ -149,8 +149,8 @@ body {
 
 .step-one-content{
   margin-bottom: 100px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 16px;
   color: #1A1A1A;
 }
@@ -467,8 +467,8 @@ p {
   position: relative;
   padding: .5em 1.2em;
   color: #1A1A1A;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 100px;
   font-size: 20px;
 }
@@ -679,7 +679,7 @@ p {
   margin-bottom: -15px;
   margin-left: 5%;
   margin-right: 5%;
-  font-size: 18px;
+  font-size: 16px;
   color: #1A1A1A;
 }
 
@@ -1038,6 +1038,50 @@ p {
   line-height: 1;
   content: attr(data-number);
   pointer-events: none;
+}
+
+
+.search-form-002 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border: 2px solid #2589d0;
+  border-radius: 5px;
+  margin-left: 5%;
+  margin-right: 50%;
+}
+
+.search-form-002 input {
+  height: 45px;
+  padding: 5px 15px;
+  border: none;
+  box-sizing: border-box;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-form-002 input::placeholder{
+  color: #767d83;
+}
+
+.search-form-002 button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border: none;
+  background-color: #2589d0;
+  cursor: pointer;
+}
+
+.search-form-002 button::after {
+  width: 20px;
+  height: 20px;
+  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23fff%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E');
+  background-repeat: no-repeat;
+  content: '';
 }
 
 
