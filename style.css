@@ -129,8 +129,8 @@ body {
   padding-top: 1.5em;
   color: #1A1A1A;
   margin-top: 100px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 26px;
   border-bottom:2px solid #6c6c6d;
 }
@@ -157,9 +157,9 @@ body {
 
 .senkyo-table{
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 90%;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 70%;
   object-fit: cover;
   margin-top: 15px;
 }
@@ -178,7 +178,7 @@ body {
   overflow: hidden;
   border: 2px solid #2589d0;
   border-radius: 5px;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-right: 20%;
 }
 
@@ -217,8 +217,8 @@ body {
 /*都道府県選択*/
 .prefecture-title{
   margin-top: 50px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   color: #1A1A1A;
   font-size:  20px;
   font-weight: 600;
@@ -227,8 +227,8 @@ body {
 
 .selectbox-002 {
   position: relative;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .selectbox-002::before,
@@ -271,6 +271,7 @@ body {
   border: 2px solid #2589d0;
   border-radius: 5px;
   color: #767d83;
+  background-color: #ffffff;
   font-size: 14px;
   cursor: pointer;
 }
@@ -279,8 +280,8 @@ body {
 
 /*フィルター*/
 p {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .filter-title{
@@ -350,8 +351,8 @@ p {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: 7%;
-  margin-right: 7%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 
@@ -494,8 +495,8 @@ p {
 }
 
 .senkyokusearch-content{
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 200px;
   font-size: 16px;
   color: #1A1A1A;
@@ -505,8 +506,8 @@ p {
 .controls {
   position: absolute;
   margin-top: -150px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   background-color: #fff;
   font-size: 20px;
   font-weight: 300;
@@ -525,8 +526,8 @@ p {
 .senkyokumap {
   position: relative; /* 相対位置指定に変更 */
   margin-top: -50px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   height: 70vh; /* 画面の縦方向の半分の高さ */
 }
 
@@ -557,8 +558,8 @@ p {
   padding-top: 1.5em;
   color: #1A1A1A;
   margin-top: 200px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 26px;
   border-bottom:2px solid #6c6c6d;
 }
@@ -579,16 +580,16 @@ p {
   
 .attention-title{
   margin-top: 45px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 20px;
   font-weight: bold;
   color: #EC0000;
 }
 
 .attention-content{ 
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 16px;
   color: #1A1A1A;
 }
@@ -596,7 +597,7 @@ p {
 .heading-039 {
   display: flex;
   align-items: center;
-  margin-left: 10%;
+  margin-left: 5%;
   margin-top: 50px;
   gap: 0 7px;
   color: #1A1A1A;
@@ -611,8 +612,8 @@ p {
 }
 
 .howtowrite-title p{
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 10px;
   font-size: 16px;
   color: #1A1A1A;
@@ -620,8 +621,8 @@ p {
 
 .howtowrite-content{
   margin-top: 25px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   padding: 1em 1em 1em 1em;
   background-color: #f1f1f4;
 }
@@ -655,8 +656,8 @@ p {
   padding-top: 1.5em;
   color: #1A1A1A;
   margin-top: 200px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 26px;
   border-bottom:2px solid #6c6c6d;
 }
@@ -676,16 +677,16 @@ p {
 .step-three-content{
   margin-top: 55px;
   margin-bottom: -15px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 18px;
   color: #1A1A1A;
 }
 
 .attention-2{
   margin-top: 55px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 16px;
   color: #EC0000;
 }
@@ -694,8 +695,8 @@ p {
 /*シェアボタン*/
 .snssharer {
   margin: 50px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
 .snssharer:after {
     content: "";
@@ -755,10 +756,10 @@ p {
 /*バナー*/
 .banner {
   display: block;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 200px;
-  width: 80%;
+  width: 90%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
 }
@@ -926,8 +927,8 @@ p {
   padding-top: 1.5em;
   color: #1A1A1A;
   margin-top: 100px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 40px;
   border-bottom:2px solid #6c6c6d;
 }
@@ -942,6 +943,15 @@ p {
   line-height: 1;
   content: attr(data-number);
   pointer-events: none;
+}
+
+.senkyo-table{
+  display: block;
+  margin-left: 10%;
+  margin-right: 10%;
+  width: 80%;
+  object-fit: cover;
+  margin-top: 15px;
 }
 
 /*もっと見る*/
@@ -971,8 +981,8 @@ p {
   position: relative;
   padding: .5em 1.2em;
   color: #1A1A1A;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-top: 100px;
   font-size: 30px;
 }
@@ -1001,8 +1011,8 @@ p {
 .senkyokumap {
   position: relative; /* 相対位置指定に変更 */
   margin-top: -50px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   height: 70vh; /* 画面の縦方向の半分の高さ */
 }
 
@@ -1012,8 +1022,8 @@ p {
   padding-top: 1.5em;
   color: #1A1A1A;
   margin-top: 200px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 40px;
   border-bottom:2px solid #6c6c6d;
 }
@@ -1037,8 +1047,8 @@ p {
   padding-top: 1.5em;
   color: #1A1A1A;
   margin-top: 200px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   font-size: 40px;
   border-bottom:2px solid #6c6c6d;
 }
@@ -1057,8 +1067,8 @@ p {
 
 .banner {
   display: block;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 10%;
   width: 80%;
   aspect-ratio: 3 / 2;
