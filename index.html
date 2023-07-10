@@ -48,9 +48,6 @@
     </style>
 
    <header>
-    <div class="banner-animation">
-      <img src="img/Banner_rainbow.jpg" class="banner">
-    </div>
     <div class="title">
       <h1 class="heading02">
         国会議員に手紙を書こう！
@@ -58,46 +55,189 @@
     </div>
    </header>
 
+  
+    <h2 class="contents-01">
+      <span>01</span>
+      手紙を書く議員を決める
+    </h2>
+    <h2 class="contents-02">
+      <span>02</span>
+      手紙を書く
+    </h2>
+    <h2 class="contents-03">
+      <span>03</span>
+      SNSで共有する
+    </h2>
+
+
    <div class="content">
       <div class="step-one">
-        <h2>
-          ①手紙を書く議員を決める
+        <h2 class="heading-1" data-number="01">
+          手紙を書く議員を決める
         </h2>
 
         <div class="step-one-content">
           <br>
           お住まいの選挙区から選出されている議員を選ぶことがオススメです！
           <br>
-          以下のプルダウンからお住まいの都道府県を選択し、
-          <br>
-          フィルターをかけてください。
+          以下のプルダウンからお住まいの都道府県を選択し、フィルターをかけてください。
           <br>
           <br>
-          「衆議院の小選挙区から選出されている議員に書きたいけど、
-          <br>
-          選挙区が分からない...」 という方は、
+          「衆議院の小選挙区から選出されている議員に書きたいけど、選挙区が分からない...」 という方は、
           <br>
          ②に進んでマップから選挙区を調べてください🔎
         </div>
 
-        <div div="giin-gallery">
-          <iframe src="https://lookerstudio.google.com/embed/reporting/c1182424-ddbc-4070-98bd-12e129da9778/page/NT4UD" frameborder="0" style="border:0" allowfullscreen></iframe>
-        </div>
-      </div>
       
-      <div class="step-two">
-        <h2>
-          ②衆議院の小選挙区が分からないときは...
-        </h2>
 
-        <div class="step-two-content">
+        <p class="sarch-form-title">氏名で検索</p>
+        <p  class="search-form-002">
+          <input type="text" id="searchInput" placeholder="名前を入力して検索">
+          <button onclick="searchByName()"></button>
+        </p>
+
+      
+        <p class="prefecture-title">お住まいの都道府県</p>
+        <label class="selectbox-002">
+          <select id="filterPrefecture" onchange="filterByPrefecture()">
+            <option value="">都道府県</option>
+            <option value="北海道">北海道</option>
+            <option value="青森">青森</option>
+            <option value="岩手">岩手</option>
+            <option value="宮城">宮城</option>
+            <option value="秋田">秋田</option>
+            <option value="山形">山形</option>
+            <option value="福島">福島</option>
+            <option value="茨城">茨城</option>
+            <option value="栃木">栃木</option>
+            <option value="群馬">群馬</option>
+            <option value="埼玉">埼玉</option>
+            <option value="千葉">千葉</option>
+            <option value="東京">東京</option>
+            <option value="神奈川">神奈川</option>
+            <option value="新潟">新潟</option>
+            <option value="富山">富山</option>
+            <option value="石川">石川</option>
+            <option value="福井">福井</option>
+            <option value="山梨">山梨</option>
+            <option value="長野">長野</option>
+            <option value="岐阜">岐阜</option>
+            <option value="静岡">静岡</option>
+            <option value="愛知">愛知</option>
+            <option value="三重">三重</option>
+            <option value="滋賀">滋賀</option>
+            <option value="京都">京都</option>
+            <option value="大阪">大阪</option>
+            <option value="兵庫">兵庫</option>
+            <option value="奈良">奈良</option>
+            <option value="和歌山">和歌山</option>
+            <option value="鳥取">鳥取</option>
+            <option value="島根">島根</option>
+            <option value="岡山">岡山</option>
+            <option value="広島">広島</option>
+            <option value="山口">山口</option>
+            <option value="徳島">徳島</option>
+            <option value="香川">香川</option>
+            <option value="愛媛">愛媛</option>
+            <option value="高知">高知</option>
+            <option value="福岡">福岡</option>
+            <option value="佐賀">佐賀</option>
+            <option value="長崎">長崎</option>
+            <option value="熊本">熊本</option>
+            <option value="大分">大分</option>
+            <option value="宮崎">宮崎</option>
+            <option value="鹿児島">鹿児島</option>
+            <option value="沖縄">沖縄</option>
+          </select>
+        </label>
+
+
+        <p class="filter">
+          <p class="filter-title">フィルターをかける</p>
+          <p id="filterbyhouse">
+              <button onclick="filterByHouse('衆議院')">衆議院</button>
+              <button onclick="filterByHouse('参議院')">参議院</button>
+          </p>
+
+          <p id="filterbyparty">
+            <button onclick="filterByParty('自民')">自民</button>
+            <button onclick="filterByParty('公明')">公明</button>
+            <button onclick="filterByParty('立憲')">立憲</button>
+            <button onclick="filterByParty('共産')">共産</button>
+            <button onclick="filterByParty('維新')">維新</button>
+            <button onclick="filterByParty('国民')">国民</button>
+            <button onclick="filterByParty('れいわ')">れいわ</button>
+            <button onclick="filterByParty('社民')">社民</button>
+            <button onclick="filterByParty('参政')">参政</button>
+            <button onclick="filterByParty('政女')">政女</button>
+            <button onclick="filterByParty('無所属')">無所属</button>
+          </p>
+
+
+          <p id="filterbysanpi">
+            <button onclick="filterBySanpi('1.賛成')">1.賛成</button>
+            <button onclick="filterBySanpi('2.どちらかと言えば賛成')">2.どちらかと言えば賛成</button>
+            <button onclick="filterBySanpi('3.どちらとも言えない')">3.どちらとも言えない</button>
+            <button onclick="filterBySanpi('4.どちらかと言えば反対')">4.どちらかと言えば反対</button>
+            <button onclick="filterBySanpi('5.反対')">5.反対</button>
+            <button onclick="filterBySanpi('6.無回答')">6.無回答</button>
+          </p>
+        </p>
+
+        <p id="reset">
+          <button onclick="resetSearchAndFilter()">リセット</button>
+        </p>
+
+
+
+        <div id="cardsContainer"></div>
+          <!-- 値を表示するためのHTMLを追加 -->
+          <template id="cardTemplate">
+            <div class="card-content">
+              <div class="card">
+                <div class="photo-container">
+                  <p><img data-photo alt="写真"></p>
+                </div>
+                <div class="info">
+                  <div class="sanpi" data-sanpi></div>
+                  <div class="kana" data-kana></div>
+                  <div class="name" data-name></div>
+                  <div class="tag">
+                    <div class="house" data-house></div>
+                    <div class="senkyoku" data-senkyoku></div>
+                    <div class="party" data-party></div>
+                  </div>
+                  <div class="prefecture" data-prefecture></div>
+                  <div class="zipcode" data-zipcode></div>
+                  <div class="address" data-address></div>
+                  <div class="area" data-area></div>
+                  <div class="meter"><a data-page target="_blank" style="color: blue;">マリフォー国会メーター個人ページ</a></div>
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <div id="moreButtonContainer">
+          <button onclick="showMoreItems()">もっと見る</button>
+        </div>  
+
+      </div>
+
+      
+
+
+      <div class="senkyokusearch">
+        <h3 class="heading-038">
+          衆議院の小選挙区が分からないときは...
+        </h3>
+
+        <div class="senkyokusearch-content">
           こちらは衆議院の小選挙区を調べるためのマップです。
           <br>
           下記の検索ボックスに「住所」または「郵便番号」を入力してください。
           <br>
-          マップに刺さったピンの周辺をタップすると、
-          <br>
-          衆議院の小選挙区が表示されます。
+          マップに刺さったピンの周辺をタップすると、衆議院の小選挙区が表示されます。
         </div>
 
         <div class="search-box">
@@ -109,13 +249,13 @@
           />
         </div>
 
-      <div id="map" class="senkyokumap"></div>
+        <div id="map" class="senkyokumap"></div>
      </div>
 
 
-      <div class="step-three">
-          <h2>
-            ③手紙を書く
+      <div class="step-two">
+          <h2 class="heading-2" data-number="02">
+            手紙を書く
           </h2>
           <div class="attention">
             <p class="attention-title">
@@ -126,22 +266,18 @@
               <br>
               賛成の議員さんはますます熱心に取り組むように。
               <br>
-              どちらとも言えない議員さんや反対の議員さんは、
+              どちらとも言えない議員さんや反対の議員さんは、関心を持って理解を深めるように。
               <br>
-              関心を持って理解を深めるように。
-              <br>
-              あなたのこと、想い、考えなどを丁寧に伝えることで、
-              <br>
-              国会に味方を増やしていきましょう❤️‍🔥
+              あなたのこと、想い、考えなどを丁寧に伝えることで、国会に味方を増やしていきましょう❤️‍🔥
             </p>
           </div>
 
           <div class="howtowrite-title">
-            <h3>手紙の書き方の一例</h3>
+            <h3 class="heading-039">手紙の書き方の一例</h3>
             <p>
-              この通りではなくても、あなたの書きたいこと、あなたの書き方で
+              この通りではなくても、あなたの書きたいこと、あなたの書き方でもちろんOKです！
               <br>
-              もちろんOKです！（シンプルな一言でも◎）
+              （シンプルな一言でも◎）
               <br>
               ひとつの参考にしてみてくださいね！
             </p>
@@ -184,66 +320,83 @@
           </div> 
         </div> 
 
-        <div class="step-four">
-          <h2>
-            ④共有する
+        <div class="step-three">
+          <h2 class="heading-3" data-number="03">
+            SNSで共有する
           </h2>
-          <div class="step-four-content">
-            手紙を書いたら、SNSで
-            <br>
-            「# 国会議員に手紙を書こう」のハッシュタグをつけて、
-            <br>
-            報告してください！
+          <div class="step-three-content">
+            手紙を書いたら、SNSで「# 国会議員に手紙を書こう」のハッシュタグをつけて、報告してください！
             <br>
             議員さんをタグ付けするのもGOOD！
           </div>
 
           <div class="attention-2">
-            ⚠︎
-            <br>
-            思いがけず個人情報を発信しないように
-            <br>
-            十分注意をしてください
+            ⚠︎ 思いがけず個人情報を発信しないように、十分注意をしてください。
           </div>
 
-          <ul class="snsbtniti2">
-            <li><a href="http://twitter.com/share?url=https://marriageforalljapan.github.io/letters-to-giin//&text=結婚の平等の実現を応援！%0a%0a%23国会議員に手紙を書こう%0a%23結婚の平等にYES%0a&via=marriage4all_" target="_blank" rel="nofollow noopener noreferrer" class="flowbtn12 fl_tw2"><i class="fab fa-twitter"></i><span>Twitter</span></a></li>
-            <li><a href="http://www.facebook.com/share.php?u=https://marriageforalljapan.github.io/letters-to-giin//"  target="_blank" rel="nofollow noopener noreferrer" class="flowbtn12 fl_fb2"><i class="fab fa-facebook-f"></i><span>Facebook</span></a></li>
-            <li><a href="https://social-plugins.line.me/lineit/share?url=https://marriageforalljapan.github.io/letters-to-giin/" target="_blank" rel="nofollow noopener noreferrer" class="flowbtn12 fl_li2"><i class="fab fa-line"></i><span>LINE</span></a></li>
-          </ul>
-
+          <div class="snssharer">
+            <span class="twitter"><a href="http://twitter.com/share?url=https://marriageforalljapan.github.io/letters-to-giin//&text=結婚の平等の実現を応援！%0a%0a%23国会議員に手紙を書こう%0a%23結婚の平等にYES%0a&via=marriage4all_" target="_blank" rel="nofollow noopener noreferrer">Twitter</a></span>
+            <span class="facebook"><a href="http://www.facebook.com/share.php?u=https://marriageforalljapan.github.io/letters-to-giin//"  target="_blank" rel="nofollow noopener noreferrer">Facebook</a></span>
+            <span class="line"><a href="https://social-plugins.line.me/lineit/share?url=https://marriageforalljapan.github.io/letters-to-giin/" target="_blank" rel="nofollow noopener noreferrer">LINE</a></span>
+          </div>
         </div> 
 
 
+      <div class="banner-animation">
+        <img src="img/Banner_rainbow.jpg" class="banner">
+      </div>
 
 
-        <div class="sign-off">
-          <P class="thanks-1">
-            マリフォーのイベントでは、これまでに
-          </P>
-
-          <p class="numbers-of-letters">
-            789
-          </p>
-
-          <p class="thanks-2">
-            通のお手紙をいただきました🤍
-            <br>
-            結婚の平等が実現するその日まで。
-            <br>
-            皆様のご協力、よろしくお願いします！
-          </p>
-      </div> 
-
-
-    <footer>
-      <ul class="footer-menu">
-        <li><a href="https://www.marriageforall.jp/">公式ホームページ </a></li>
-        <li>　|　</li>
-        <li><a href="https://meter.marriageforall.jp/"> マリフォー国会メーター</a></li>
-       </ul>
-      <p>© 公益社団法人MarriageForAllJapan - 結婚の自由をすべての人に</p>
-    </footer>
+    <footer class="footer-002">
+      <a href="https://www.marriageforall.jp/" class="logo" target="_blank" rel="nofollow noopener noreferrer">
+          Marriage For All Japan
+      </a>
+      <nav>
+          <ul class="footer-002__list">
+              <li>
+                  <a href="https://twitter.com/marriage4all_?s=20" target="_blank" rel="nofollow noopener noreferrer">
+                      <svg class="footer-002__sns-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path fill="#fff"
+                                d="M22.162 5.656a8.384 8.384 0 0 1-2.402.658A4.196 4.196 0 0 0 21.6 4c-.82.488-1.719.83-2.656 1.015a4.182 4.182 0 0 0-7.126 3.814 11.874 11.874 0 0 1-8.62-4.37 4.168 4.168 0 0 0-.566 2.103c0 1.45.738 2.731 1.86 3.481a4.168 4.168 0 0 1-1.894-.523v.052a4.185 4.185 0 0 0 3.355 4.101 4.21 4.21 0 0 1-1.89.072A4.185 4.185 0 0 0 7.97 16.65a8.394 8.394 0 0 1-6.191 1.732 11.83 11.83 0 0 0 6.41 1.88c7.693 0 11.9-6.373 11.9-11.9 0-.18-.005-.362-.013-.54a8.496 8.496 0 0 0 2.087-2.165z"/>
+                      </svg>
+                  </a>
+              </li>
+              <li>
+                  <a href="https://www.facebook.com/marriageforalljapan/" target="_blank" rel="nofollow noopener noreferrer">
+                      <svg class="footer-002__sns-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path fill="#ffffff"
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.879V14.89h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.989C18.343 21.129 22 16.99 22 12c0-5.523-4.477-10-10-10z"/>
+                      </svg>
+                  </a>
+              </li>
+              <li>
+                  <a href="https://www.instagram.com/marriageforalljapan/?hl=ja" target="_blank" rel="nofollow noopener noreferrer">
+                      <svg class="footer-002__sns-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path fill="#ffffff"
+                                d="M12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm0-2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm6.5-.25a1.25 1.25 0 0 1-2.5 0 1.25 1.25 0 0 1 2.5 0zM12 4c-2.474 0-2.878.007-4.029.058-.784.037-1.31.142-1.798.332-.434.168-.747.369-1.08.703a2.89 2.89 0 0 0-.704 1.08c-.19.49-.295 1.015-.331 1.798C4.006 9.075 4 9.461 4 12c0 2.474.007 2.878.058 4.029.037.783.142 1.31.331 1.797.17.435.37.748.702 1.08.337.336.65.537 1.08.703.494.191 1.02.297 1.8.333C9.075 19.994 9.461 20 12 20c2.474 0 2.878-.007 4.029-.058.782-.037 1.309-.142 1.797-.331.433-.169.748-.37 1.08-.702.337-.337.538-.65.704-1.08.19-.493.296-1.02.332-1.8.052-1.104.058-1.49.058-4.029 0-2.474-.007-2.878-.058-4.029-.037-.782-.142-1.31-.332-1.798a2.911 2.911 0 0 0-.703-1.08 2.884 2.884 0 0 0-1.08-.704c-.49-.19-1.016-.295-1.798-.331C14.925 4.006 14.539 4 12 4zm0-2c2.717 0 3.056.01 4.122.06 1.065.05 1.79.217 2.428.465.66.254 1.216.598 1.772 1.153a4.908 4.908 0 0 1 1.153 1.772c.247.637.415 1.363.465 2.428.047 1.066.06 1.405.06 4.122 0 2.717-.01 3.056-.06 4.122-.05 1.065-.218 1.79-.465 2.428a4.883 4.883 0 0 1-1.153 1.772 4.915 4.915 0 0 1-1.772 1.153c-.637.247-1.363.415-2.428.465-1.066.047-1.405.06-4.122.06-2.717 0-3.056-.01-4.122-.06-1.065-.05-1.79-.218-2.428-.465a4.89 4.89 0 0 1-1.772-1.153 4.904 4.904 0 0 1-1.153-1.772c-.248-.637-.415-1.363-.465-2.428C2.013 15.056 2 14.717 2 12c0-2.717.01-3.056.06-4.122.05-1.066.217-1.79.465-2.428a4.88 4.88 0 0 1 1.153-1.772A4.897 4.897 0 0 1 5.45 2.525c.638-.248 1.362-.415 2.428-.465C8.944 2.013 9.283 2 12 2z"/>
+                      </svg>
+                  </a>
+              </li>
+              <li>
+                  <a href="https://line.me/ti/p/%40zif9715k" target="_blank" rel="nofollow noopener noreferrer">
+                      <svg class="footer-002__sns-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path fill="#fff"
+                                d="M18.663 10.84a.526.526 0 0 1-.526.525h-1.462v.938h1.462a.525.525 0 1 1 0 1.049H16.15a.526.526 0 0 1-.522-.524V8.852c0-.287.235-.525.525-.525h1.988a.525.525 0 0 1-.003 1.05h-1.462v.938h1.462c.291 0 .526.237.526.525zm-4.098 2.485a.538.538 0 0 1-.166.025.515.515 0 0 1-.425-.208l-2.036-2.764v2.45a.525.525 0 0 1-1.047 0V8.852a.522.522 0 0 1 .52-.523c.162 0 .312.086.412.211l2.052 2.775V8.852c0-.287.235-.525.525-.525.287 0 .525.238.525.525v3.976a.524.524 0 0 1-.36.497zm-4.95.027a.526.526 0 0 1-.523-.524V8.852c0-.287.236-.525.525-.525.289 0 .524.238.524.525v3.976a.527.527 0 0 1-.526.524zm-1.53 0H6.098a.528.528 0 0 1-.525-.524V8.852a.527.527 0 0 1 1.05 0v3.45h1.464a.525.525 0 0 1 0 1.05zM12 2.572c-5.513 0-10 3.643-10 8.118 0 4.01 3.558 7.369 8.363 8.007.325.068.769.215.881.492.1.25.066.638.032.9l-.137.85c-.037.25-.2.988.874.537 1.076-.449 5.764-3.398 7.864-5.812C21.313 14.089 22 12.477 22 10.69c0-4.475-4.488-8.118-10-8.118z"/>
+                      </svg>
+                  </a>
+              </li>
+              <li>
+                  <a href="https://www.youtube.com/channel/UC9UZFoP7yA7IAbbdYZr3XFw" target="_blank" rel="nofollow noopener noreferrer">
+                      <svg class="footer-002__sns-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                          <path fill="#fff"
+                                d="M21.543 6.498C22 8.28 22 12 22 12s0 3.72-.457 5.502c-.254.985-.997 1.76-1.938 2.022C17.896 20 12 20 12 20s-5.893 0-7.605-.476c-.945-.266-1.687-1.04-1.938-2.022C2 15.72 2 12 2 12s0-3.72.457-5.502c.254-.985.997-1.76 1.938-2.022C6.107 4 12 4 12 4s5.896 0 7.605.476c.945.266 1.687 1.04 1.938 2.022zM10 15.5l6-3.5-6-3.5v7z"/>
+                      </svg>
+                  </a>
+              </li>
+          </ul>
+      </nav>
+      <p class="footer-002__copyright">@ 公益社団法人MarriageForAllJapan - 結婚の自由をすべての人に</p>
+  </footer>
 
   </body>
 </html>
