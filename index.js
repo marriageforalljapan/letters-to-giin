@@ -21,7 +21,7 @@ function createCards(data, startIndex, endIndex) {
     cardElement.querySelector("[data-kana]").textContent = item["かな"];
     cardElement.querySelector("[data-house]").textContent = item["衆参"];
     cardElement.querySelector("[data-senkyoku]").textContent = item["選挙区"];
-    cardElement.querySelector("[data-party]").textContent = item["party"];
+    cardElement.querySelector("[data-party]").textContent = item["政党"];
     cardElement.querySelector("[data-sanpi]").textContent = item["賛否"];
     cardElement.querySelector("[data-zipcode]").textContent = item["国会_郵便番号"];
     cardElement.querySelector("[data-address]").textContent = item["国会_住所"];
@@ -113,7 +113,7 @@ function applyFilters() {
     var nameMatch = currentFilters.name === "" || item["氏名"].toLowerCase().includes(currentFilters.name);
     var houseMatch = currentFilters.house === "" || item["衆参"].includes(currentFilters.house);
     var prefectureMatch = currentFilters.prefecture === "" || item["都道府県"] === currentFilters.prefecture;
-    var partyMatch = currentFilters.party === "" || item["party"].includes(currentFilters.party);
+    var partyMatch = currentFilters.party === "" || item["政党"].includes(currentFilters.party);
     var sanpiMatch = currentFilters.sanpi === "" || item["賛否"].includes(currentFilters.sanpi);
     return nameMatch && houseMatch && prefectureMatch && sanpiMatch && partyMatch;
   });
@@ -154,8 +154,16 @@ function searchByName() {
 function filterByPrefecture() {
   var filterPrefecture = document.getElementById("filterPrefecture").value;
   currentFilters.prefecture = filterPrefecture; // 都道府県のフィルターを選択
-  fetchFilteredData();
+  fetchFilteredData()
+
+  if( hoge.value == 0 ){
+    hoge.style.color = '';
+  }else{
+    hoge.style.color = 'blue';
+  } 
 }
+
+
 
 function filterByHouse(house) {
   clearCards(); // 表示中のカードをクリア
