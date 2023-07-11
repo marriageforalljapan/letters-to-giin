@@ -18,7 +18,7 @@ header {
 }
 
 img{
-  margin: 0 0 0 10%; 
+  margin: 0 0 0 20%; 
   padding: 0;
   width: 80px;
 }
@@ -310,6 +310,7 @@ li {
   content: '';
 }
 
+
 .selectbox-002 select {
   appearance: none;
   -webkit-appearance: none;
@@ -319,11 +320,13 @@ li {
   padding: 5px 15px;
   border: 2px solid #2589d0;
   border-radius: 5px;
-  color: #767d83;
   background-color: #ffffff;
   font-size: 14px;
   cursor: pointer;
 }
+
+select:invalid { color: #767d83; } 
+select option { color: #1A1A1A; } 
 
 
 
@@ -876,9 +879,9 @@ p {
   }
   
   img{
-    margin: 0 0 0 5%; 
+    margin: 0 0 0 35%; 
     padding: 0;
-    width: 150px;
+    width: 200px;
   }
   
   nav a {	
