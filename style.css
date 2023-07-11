@@ -1,5 +1,5 @@
 /*フォントを設定*/
- body {
+body {
   font-family: 'Noto Sans JP', sans-serif;
   line-height: 1.75;
 }
@@ -17,30 +17,30 @@ header {
   box-shadow: 0 5px 15px 0 rgba(219, 219, 219, 0.5);
 }
 
-img{
+header img {
   margin: 0 0 0 20%; 
   padding-top: 10px;
   width: 80px;
 }
 
-nav a {	
+header nav a {	
   text-decoration: none;
   color: #1a1a1a;
   font-size: 13px;
   font-weight: 900;
 }
 
-nav {
+header nav {
   margin: 0 8% 0 auto;
 }
 
-ul {
+header ul {
   list-style: none;
   margin: 0;
   display: flex;
 }
 
-li {
+header li {
   margin: 0 0 0 5px;
 }
 
@@ -431,6 +431,8 @@ p {
 }
 
 .card img {
+  display: flex;
+  justify-content: center;
   width: 130px;
   height: 130px;
   border-radius: 50%;
@@ -818,14 +820,15 @@ p {
 
 /*フッター*/
 .footer-002 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 50px 10px 50px 10px;
   background-color: #ec0000;
 }
 
 
 .footer-002 .logo {
-  display: flex;
-  justify-content: center;
   font-size: 1em;
   font-family: 900;
   color: #ffffff;
@@ -836,10 +839,11 @@ p {
 .footer-002__list {
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 0 1em;
   list-style-type: none;
-  margin-top: 25px;
-  margin-bottom: 25px;
+  margin: 0 0 .5em;
+  padding: .5em;
 }
 
 
@@ -849,18 +853,17 @@ p {
 }
 
 .footer-002__copyright {
-  display: flex;
-  justify-content: center;
   margin: 0;
   color: #ffffffb3;
   font-weight: 200;
   font-size: .5em;
+  
 }
 
 
 
  /*　for iPhone Landscape　(iPhone 横)　*/
-@media screen and (min-width:480px) { 
+@media screen and (min-width:480px) and ( max-width:768px) { 
   header {
     padding: 20px 10px;
     position: fixed;
@@ -874,30 +877,30 @@ p {
     box-shadow: 0 5px 15px 0 rgba(219, 219, 219, 0.5);
   }
   
-  img{
+  header img{
     margin: 0 0 0 35%; 
     padding: 0;
     width: 100px;
   }
   
-  nav a {	
+  header nav a {	
     text-decoration: none;
     color: #3f3f3f;
     font-size: 14px;
     font-weight: 900;
   }
   
-  nav {
+  header nav {
     margin: 0 10% 0 auto;
   }
   
-  ul {
+  header ul {
     list-style: none;
     margin: 0;
     display: flex;
   }
   
-  li {
+  header li {
     margin: 0 0 0 15px;
   }
 
@@ -930,30 +933,30 @@ p {
     box-shadow: 0 5px 15px 0 rgba(219, 219, 219, 0.5);
   }
   
-  img{
+  header img{
     margin: 0 0 0 35%; 
     padding: 0;
     width: 150px;
   }
   
-  nav a {	
+  header nav a {	
     text-decoration: none;
     color: #3f3f3f;
     font-size: 20px;
     font-weight: 900;
   }
   
-  nav {
+  header nav {
     margin: 0 10% 0 auto;
   }
   
-  ul {
+  header ul {
     list-style: none;
     margin: 0;
     display: flex;
   }
   
-  li {
+  header li {
     margin: 0 0 0 30px;
   }
 
@@ -986,30 +989,30 @@ p {
     box-shadow: 0 5px 15px 0 rgba(219, 219, 219, 0.5);
   }
   
-  img{
+  header img{
     margin: 0 0 0 35%; 
     padding: 0;
     width: 200px;
   }
   
-  nav a {	
+  header nav a {	
     text-decoration: none;
     color: #3f3f3f;
     font-size: 20px;
     font-weight: 900;
   }
   
-  nav {
+  header nav {
     margin: 0 10% 0 auto;
   }
   
-  ul {
+  header ul {
     list-style: none;
     margin: 0;
     display: flex;
   }
   
-  li {
+  header li {
     margin: 0 0 0 30px;
   }
 
@@ -1337,6 +1340,9 @@ p {
 
 /*フッター*/
 .footer-002 {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   padding: 75px 10px;
   background-color: #ec0000;
 }
@@ -1345,13 +1351,17 @@ p {
   font-size: 1.7em;
   font-family: 900;
   color: #ffffff;
-  margin-bottom: 1em;
   text-decoration: none;
 }
 
 .footer-002__list {
   display: flex;
+  justify-content: center;
+  align-items: center;
   list-style-type: none;
+  gap: 0 1em;
+  margin: 0 0 .5em;
+  padding: .5em;
 }
 
 .footer-002__sns-icon {
