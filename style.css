@@ -561,10 +561,10 @@ p {
   margin-left: 5%;
   margin-right: 5%;
   background-color: #fff;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: 300;
   padding: 10px 15px 10px 15px;
-  width: 50%;
+  width: 80%;
   text-overflow: ellipsis;
   border: 2px solid #2589d0;
   border-radius: 5px;
