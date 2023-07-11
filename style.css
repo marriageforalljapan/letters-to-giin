@@ -859,12 +859,120 @@ p {
 
 
 
+ /*　for iPhone Landscape　(iPhone 横)　*/
+@media screen and (min-width:480px) { 
+  header {
+    padding: 20px 10px;
+    position: fixed;
+    z-index:999;
+    top: 0;
+    left:0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px 0 rgba(219, 219, 219, 0.5);
+  }
+  
+  img{
+    margin: 0 0 0 35%; 
+    padding: 0;
+    width: 100px;
+  }
+  
+  nav a {	
+    text-decoration: none;
+    color: #3f3f3f;
+    font-size: 14px;
+    font-weight: 900;
+  }
+  
+  nav {
+    margin: 0 10% 0 auto;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+  }
+  
+  li {
+    margin: 0 0 0 15px;
+  }
+
+
+  /*アンカーリンクがヘッダーに被らないようにする処理*/
+  :target::before {
+    content: "";
+    display: block;
+    height: 10px; /* ずらしたい高さ */
+    margin-top: -10px; /* heightに対するネガティブマージン */
+    visibility: hidden,
+  }
+
+
+}
 
 
 
+@media screen and (min-width:768px) and ( max-width:1024px) { 
+  header {
+    padding: 20px 10px;
+    position: fixed;
+    z-index:999;
+    top: 0;
+    left:0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px 0 rgba(219, 219, 219, 0.5);
+  }
+  
+  img{
+    margin: 0 0 0 35%; 
+    padding: 0;
+    width: 150px;
+  }
+  
+  nav a {	
+    text-decoration: none;
+    color: #3f3f3f;
+    font-size: 20px;
+    font-weight: 900;
+  }
+  
+  nav {
+    margin: 0 10% 0 auto;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+  }
+  
+  li {
+    margin: 0 0 0 30px;
+  }
 
+
+  /*アンカーリンクがヘッダーに被らないようにする処理*/
+  :target::before {
+    content: "";
+    display: block;
+    height: 10px; /* ずらしたい高さ */
+    margin-top: -10px; /* heightに対するネガティブマージン */
+    visibility: hidden,
+  }
+
+
+}
+
+
+/*　画面サイズが1024pxからはここを読み込む　*/
 @media screen and (min-width:1024px) {
-  /*　画面サイズが1024pxからはここを読み込む　*/
   header {
     padding: 20px 10px;
     position: fixed;
