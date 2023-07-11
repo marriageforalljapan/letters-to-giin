@@ -42,13 +42,15 @@
     <script src="./index.js"></script>
   </head>
 
-   <body>
+  <body>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap');
     </style>
 
    <header>
-    <img src="/Users/kanagawachikairyou/Downloads/test_map_2/Yes_Logo.jpg" alt="結婚の平等にYES!">
+    <a href="#top">
+      <img src="Yes_Logo.jpg" alt="結婚の平等にYES!">
+    </a>
     <nav class="pc-nav">
       <ul>
         <li><a href="#heading1">議員を決める</a></li>
@@ -58,7 +60,7 @@
     </nav>
    </header>
 
-   <div class="title">
+   <div class="title" id="top">
       <h1 class="heading02">
         国会議員に<br>手紙を書こう！
       </h1>
@@ -114,8 +116,8 @@
       
         <p class="prefecture-title">お住まいの都道府県</p>
         <label class="selectbox-002">
-          <select id="filterPrefecture" onchange="filterByPrefecture()">
-            <option value="">都道府県</option>
+          <select id="filterPrefecture" onchange="filterByPrefecture()" required>
+            <option value="" >都道府県を選択</option>
             <option value="北海道">北海道</option>
             <option value="青森">青森</option>
             <option value="岩手">岩手</option>
