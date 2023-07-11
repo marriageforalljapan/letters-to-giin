@@ -1,12 +1,57 @@
 /*フォントを設定*/
-body {
+ body {
   font-family: 'Noto Sans JP', sans-serif;
   line-height: 1.75;
 }
 
+header {
+  padding: 20px 10px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left:0;
+  z-index:999;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 5px 15px 0 rgba(219, 219, 219, 0.5);
+}
+
+img{
+  margin: 0 0 0 5%; 
+  padding: 0;
+  width: 80px;
+}
+
+nav a {	
+  text-decoration: none;
+  color: #3f3f3f;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+nav {
+  margin: 0 10% 0 auto;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  display: flex;
+}
+
+li {
+  margin: 0 0 0 10px;
+}
+
+
+
+
+
+
 /*ページタイトル*/
 .title{
-  margin-top: 100px;
+  margin-top: 150px;
   margin-bottom: 10px;
 }
 
@@ -31,9 +76,15 @@ body {
 }
 
 /*目次*/
+.contents-01 a,
+.contents-02 a,
+.contents-03 a{
+  text-decoration: none;
+}
+
 .contents-01 {
   position: relative;
-  margin-top: 75px;
+  margin-top: 100px;
   margin-left: 12%;
   margin-right: 12%;
   padding: 10px 10px;
@@ -126,7 +177,7 @@ body {
 /*step-one*/
 .heading-1 {
   position: relative;
-  padding-top: 1.5em;
+  padding-top: 4em;
   color: #1A1A1A;
   margin-top: 100px;
   margin-left: 5%;
@@ -555,9 +606,9 @@ p {
 /*step-two*/
 .heading-2 {
   position: relative;
-  padding-top: 1.5em;
+  padding-top: 4em;
   color: #1A1A1A;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-left: 5%;
   margin-right: 5%;
   font-size: 26px;
@@ -653,9 +704,9 @@ p {
 /*step-three*/
 .heading-3 {
   position: relative;
-  padding-top: 1.5em;
+  padding-top: 4em;
   color: #1A1A1A;
-  margin-top: 200px;
+  margin-top: 100px;
   margin-left: 5%;
   margin-right: 5%;
   font-size: 26px;
@@ -766,36 +817,39 @@ p {
 
 /*フッター*/
 .footer-002 {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
   padding: 50px 10px 50px 10px;
   background-color: #ec0000;
 }
 
+
 .footer-002 .logo {
+  display: flex;
+  justify-content: center;
   font-size: 1em;
   font-family: 900;
   color: #ffffff;
   margin-bottom: 1em;
+  text-decoration: none;
 }
 
 .footer-002__list {
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 0 1.5em;
+  gap: 0 1em;
   list-style-type: none;
-  margin: 0 0 .5em;
-  padding: .5em;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
+
 .footer-002__sns-icon {
-  width: 21px;
-  height: 21px;
+  width: 25px;
+  height: 25px;
 }
 
 .footer-002__copyright {
+  display: flex;
+  justify-content: center;
   margin: 0;
   color: #ffffffb3;
   font-weight: 200;
@@ -810,8 +864,59 @@ p {
 
 @media screen and (min-width:1024px) {
   /*　画面サイズが1024pxからはここを読み込む　*/
-  /*ページタイトル*/
+  header {
+    padding: 20px 10px;
+    position: fixed;
+    z-index:999;
+    top: 0;
+    left:0;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 15px 0 rgba(219, 219, 219, 0.5);
+  }
   
+  img{
+    margin: 0 0 0 5%; 
+    padding: 0;
+    width: 150px;
+  }
+  
+  nav a {	
+    text-decoration: none;
+    color: #3f3f3f;
+    font-size: 20px;
+    font-weight: 900;
+  }
+  
+  nav {
+    margin: 0 10% 0 auto;
+  }
+  
+  ul {
+    list-style: none;
+    margin: 0;
+    display: flex;
+  }
+  
+  li {
+    margin: 0 0 0 30px;
+  }
+
+
+  /*アンカーリンクがヘッダーに被らないようにする処理*/
+  :target::before {
+    content: "";
+    display: block;
+    height: 10px; /* ずらしたい高さ */
+    margin-top: -10px; /* heightに対するネガティブマージン */
+    visibility: hidden,
+  }
+
+
+
+  /*ページタイトル*/
   .heading02 {
     position: relative;
     font-size: 60px;
@@ -835,6 +940,7 @@ p {
 /*目次*/
 .contents-01 {
   position: relative;
+  margin-top: 100px;
   margin-left: 30%;
   margin-right: 30%;
   padding: 10px 30px;
@@ -926,7 +1032,7 @@ p {
   position: relative;
   padding-top: 1.5em;
   color: #1A1A1A;
-  margin-top: 100px;
+  margin-top: 150px;
   margin-left: 5%;
   margin-right: 5%;
   font-size: 40px;
@@ -1021,7 +1127,7 @@ p {
   position: relative;
   padding-top: 1.5em;
   color: #1A1A1A;
-  margin-top: 200px;
+  margin-top: 150px;
   margin-left: 5%;
   margin-right: 5%;
   font-size: 40px;
@@ -1090,7 +1196,7 @@ p {
   position: relative;
   padding-top: 1.5em;
   color: #1A1A1A;
-  margin-top: 200px;
+  margin-top: 150px;
   margin-left: 5%;
   margin-right: 5%;
   font-size: 40px;
@@ -1113,8 +1219,8 @@ p {
   display: block;
   margin-left: 5%;
   margin-right: 5%;
-  margin-bottom: 10%;
-  width: 80%;
+  margin-bottom: 30%;
+  width: 90%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
 }
@@ -1122,28 +1228,21 @@ p {
 
 /*フッター*/
 .footer-002 {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  padding: 75px 10px 75px 10px;
+  padding: 75px 10px;
   background-color: #ec0000;
 }
 
 .footer-002 .logo {
-  font-size: 1.5em;
+  font-size: 1.7em;
   font-family: 900;
   color: #ffffff;
   margin-bottom: 1em;
+  text-decoration: none;
 }
 
 .footer-002__list {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0 1.5em;
   list-style-type: none;
-  margin: 0 0 .5em;
-  padding: .5em;
 }
 
 .footer-002__sns-icon {
