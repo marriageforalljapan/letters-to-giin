@@ -375,31 +375,34 @@ p{
 
 /*リセットボタン*/
 #reset button{
+  display: block;
   padding: 5px 10px;
-  margin-top: 30px;
+  margin-top: 10px;
   border:2px solid #2589d0;
   border-radius: 5px;
   background-color: #ffffff;
   color: #767d83;
+  z-index: 999;
 }
 
 #reset button:hover{
+  display: block;
   padding: 5px 10px;
-  margin-top: 30px;
+  margin-top: 10px;
   border:2px solid #2589d0;
   border-radius: 5px;
   background-color: #2589d0;
   color: #ffffff;
+  z-index: 999;
 }
 
 
 
 /*円グラフ*/
 #myChart4{
-  margin-top: -10px;
   position: relative;
   display: block;
-  top: -50px;
+  top: -30px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -407,15 +410,13 @@ p{
 /*議員数*/
 #filteredItemCount {
   position: absolute;
-  font-size: 30px;
+  font-size: 25px;
   font-weight: 600;
   color:#1A1A1A;
   left: 45%;
   transform: translateX(-45%);
-  margin-top: -170px;
-  z-index: 999;
+  margin-top: -150px;
 }
-
 
 
 
