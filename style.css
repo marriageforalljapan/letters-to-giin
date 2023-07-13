@@ -376,8 +376,9 @@ p{
 /*リセットボタン*/
 #reset button{
   display: block;
+  font-size: 14px;
   padding: 5px 10px;
-  margin-top: 10px;
+  margin-top: 30px;
   border:2px solid #2589d0;
   border-radius: 5px;
   background-color: #ffffff;
@@ -388,7 +389,7 @@ p{
 #reset button:hover{
   display: block;
   padding: 5px 10px;
-  margin-top: 10px;
+  margin-top: 30px;
   border:2px solid #2589d0;
   border-radius: 5px;
   background-color: #2589d0;
@@ -402,7 +403,7 @@ p{
 #myChart4{
   position: relative;
   display: block;
-  top: -30px;
+  top: -20px;
   left: 50%;
   transform: translateX(-50%);
 }
@@ -411,11 +412,11 @@ p{
 #filteredItemCount {
   position: absolute;
   font-size: 25px;
-  font-weight: 600;
+  font-weight: 700;
   color:#1A1A1A;
   left: 45%;
   transform: translateX(-45%);
-  margin-top: -150px;
+  margin-top: -135px;
 }
 
 
@@ -426,7 +427,7 @@ p{
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: -100px;
+  margin-top: -90px;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -836,11 +837,100 @@ p{
   display: block;
   margin-left: 5%;
   margin-right: 5%;
-  margin-bottom: 200px;
+  margin-bottom: 50px;
   width: 90%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
 }
+
+/*手紙を書こうリーフレット*/
+.leaflet p{
+  font-size: 16px;
+}
+
+.leaflet-dawnload{
+  display:flex;
+  margin-top: 20px;
+}
+
+/*閲覧用*/
+.button-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  margin-left: 5%;
+  padding: .5em 0.5em;
+  border: none;
+  border-radius: 5px;
+  background-color: #2589d0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.button-view:hover {
+  opacity: 0.3;
+  background-color: #2589d0;
+}
+
+.button-view::before {
+  width: 1em;
+  height: 1em;
+  margin-right: 10px;
+  background: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M15.6%208.4V1.2H8.4v7.198h-6l9.6%209.6%209.6-9.6h-6zM0%2020.4h24v2.4H0v-2.4z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E') no-repeat center;
+  content: '';
+}
+
+/*印刷用*/
+.button-print {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding: .5em  0.5em;
+  border: none;
+  border-radius: 5px;
+  background-color: #2589d0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.button-print:hover {
+  opacity: 0.3;
+  background-color: #2589d0;
+  
+}
+
+.button-print::before {
+  width: 1em;
+  height: 1em;
+  margin-right: 10px;
+  background: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M15.6%208.4V1.2H8.4v7.198h-6l9.6%209.6%209.6-9.6h-6zM0%2020.4h24v2.4H0v-2.4z%22%20fill%3D%22%23fff%22%2F%3E%3C%2Fsvg%3E') no-repeat center;
+  content: '';
+}
+
+
+.kokkai-meter p{
+  font-size: 16px;
+  margin-top: 75px;
+  
+}
+
+.kokkaimeter-logo{
+  display: flex;
+  width: 200px;
+  margin-left: 5%;
+  margin-bottom: 100px;
+}
+
+.kokkaimeter-logo:hover{
+  opacity: 0.3;
+}
+
 
 /*フッター*/
 .footer-002 {
@@ -858,6 +948,10 @@ p{
   color: #ffffff;
   margin-bottom: 1em;
   text-decoration: none;
+}
+
+.footer-002 .logo:hover {
+  opacity: 0.3;
 }
 
 .footer-002__list {
@@ -1355,8 +1449,9 @@ p{
   display: block;
   margin-left: 5%;
   margin-right: 5%;
-  margin-bottom: 30%;
-  width: 90%;
+  margin-top: 100px;
+  margin-bottom: 50px;
+  width: 70%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
 }
@@ -1376,6 +1471,10 @@ p{
   font-family: 900;
   color: #ffffff;
   text-decoration: none;
+}
+
+.footer-002 .logo:hover {
+  opacity: 0.3;
 }
 
 .footer-002__list {
