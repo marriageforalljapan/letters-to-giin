@@ -229,6 +229,7 @@ header li {
   border-radius: 5px;
   margin-left: 5%;
   margin-right: 20%;
+  margin-top: -10px;
 }
 
 .search-form-002 input {
@@ -265,9 +266,10 @@ header li {
 
 /*都道府県選択*/
 .prefecture-title{
-  margin-top: 50px;
+  margin-top: 30px;
   margin-left: 5%;
   margin-right: 5%;
+  margin-bottom: 10px;
   color: #1A1A1A;
   font-size:  20px;
   font-weight: 600;
@@ -331,13 +333,14 @@ select option { color: #1A1A1A; }
 
 
 /*フィルター*/
-p {
+p{
   margin-left: 5%;
   margin-right: 5%;
 }
 
 .filter-title{
-  margin-top: 50px;
+  margin-top: 30px;
+  margin-bottom: -10px;
   color: #1A1A1A;
   font-size: 20px;
   font-weight: 600;
@@ -374,7 +377,6 @@ p {
 #reset button{
   padding: 5px 10px;
   margin-top: 30px;
-  margin-bottom: 50px;
   border:2px solid #2589d0;
   border-radius: 5px;
   background-color: #ffffff;
@@ -384,25 +386,46 @@ p {
 #reset button:hover{
   padding: 5px 10px;
   margin-top: 30px;
-  margin-bottom: 50px;
   border:2px solid #2589d0;
   border-radius: 5px;
   background-color: #2589d0;
   color: #ffffff;
 }
 
-/*議員数*/
-#filteredItemCount{
-  font-size: 16px;
-  color:#1A1A1A;
-  text-align: center;
+
+
+/*円グラフ*/
+#myChart4{
+  margin-top: -10px;
+  position: relative;
+  display: block;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
 }
+
+/*議員数*/
+#filteredItemCount {
+  position: absolute;
+  font-size: 30px;
+  font-weight: 600;
+  color:#1A1A1A;
+  left: 45%;
+  transform: translateX(-45%);
+  margin-top: -170px;
+  z-index: 999;
+}
+
+
+
+
 
 /*議員カード*/
 #cardsContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin-top: -100px;
   margin-left: 5%;
   margin-right: 5%;
 }
