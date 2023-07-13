@@ -105,6 +105,76 @@ function showMoreItems() {
 }
 
 
+var myChart4; // グローバルスコープで myChart4 変数を宣言
+
+function createChart(filteredData) {
+  var totalCount = filteredData.length;
+  var agreeCount = 0;
+  var somewhatAgreeCount = 0;
+  var neitherAgreeNorDisagreeCount = 0;
+  var somewhatOpposeCount = 0;
+  var opposeCount = 0;
+  var noResponseCount = 0;
+
+  filteredData.forEach(function(item) {
+    var sanpiValue = item["賛否"];
+    if (sanpiValue === "1.賛成") {
+      agreeCount++;
+    } else if (sanpiValue === "2.どちらかと言えば賛成") {
+      somewhatAgreeCount++;
+    } else if (sanpiValue === "3.どちらとも言えない") {
+      neitherAgreeNorDisagreeCount++;
+    } else if (sanpiValue === "4.どちらかと言えば反対") {
+      somewhatOpposeCount++;
+    } else if (sanpiValue === "5.反対") {
+      opposeCount++;
+    } else if (sanpiValue === "6.無回答") {
+      noResponseCount++;
+    }
+  });
+
+  var ctx = document.getElementById("myChart4").getContext("2d");
+
+  // チャートが既に存在する場合は破棄する
+  if (myChart4) {
+    myChart4.destroy();
+  }
+
+  myChart4 = new Chart(ctx, {
+    type: "doughnut",
+    data: {
+      labels: ["賛成", "どちらかと言えば賛成", "どちらとも言えない", "どちらかと言えば反対", "反対", "無回答"],
+      datasets: [
+        {
+          data: [agreeCount, somewhatAgreeCount, neitherAgreeNorDisagreeCount, somewhatOpposeCount, opposeCount, noResponseCount],
+          backgroundColor: ["rgba(255, 0, 0, 0.8)", "rgba(238, 97, 130, 0.8)", "rgba(105, 105, 105, 0.8)", "rgba(65, 105, 225, 0.8)", "rgba(0, 0, 205, 0.8)", "rgba(192, 192, 192, 0.8)"],
+          borderColor: "white",
+          borderWidth: 3
+        }
+      ]
+    },
+    options: {
+      responsive: false,
+      cutoutPercentage: 50,
+      rotation: -90,
+      circumference: 180,
+      title: {
+        display: true,
+        fontSize: 20,
+        text: "ドーナツチャート(doughnut)"
+      },
+      legend: {
+        position: "right"
+      },
+      plugins: {
+        legend: {
+          display: false
+        }
+      }
+    }
+  });
+}
+
 function applyFilters() {
   currentIndex = maxItemsToShow;
   clearCards();
@@ -130,9 +200,17 @@ function applyFilters() {
     moreButtonContainer.style.display = "none"; // 「もっと見る」ボタンを非表示
   }
 
-  document.getElementById("filteredItemCount").textContent =  "議員数：" + filteredItemCount +"名";
+  // 議員数のカウント
+  document.getElementById("filteredItemCount").textContent = filteredItemCount + "名";
 
+  // グラフの作成
+  createChart(filteredData);
 }
+
+
+
+
+
 
 
 // ボタンのクリック時にスタイルを設定する関数
@@ -261,19 +339,11 @@ function resetSearchAndFilter() {
   } else {
     moreButtonContainer.style.display = "none"; // 「もっと見る」ボタンを非表示
   }
+
+  applyFilters()
 }
 
 fetchFilteredData();
-
-
-
-
-
-
-
-
-
-
 
 
 
