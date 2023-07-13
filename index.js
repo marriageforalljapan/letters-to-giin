@@ -61,6 +61,7 @@ function clearCards() {
 }
 
 var jsonData; // JSONデータを保持する変数
+var totalMemberCount = 0; // 全議員数を保持する変数
 var maxItemsToShow = 12; // 一度に表示する最大項目数
 var currentIndex = 0; // 現在のインデックス
 var currentFilters = {
@@ -77,8 +78,13 @@ function fetchFilteredData() {
 
   fetchJSON(filteredUrl, function(data) {
     jsonData = data; // データをjsonData変数に代入
+    totalMemberCount = countTotalMembers(jsonData); // 全議員数をカウント
     applyFilters();
   });
+}
+
+function countTotalMembers(data) {
+  return data.length;
 }
 
 function showMoreItems() {
@@ -209,10 +215,6 @@ function applyFilters() {
 
 
 
-
-
-
-
 // ボタンのクリック時にスタイルを設定する関数
 function setButtonStyle(button) {
   var activeButtons = document.getElementsByClassName("active");
@@ -340,7 +342,12 @@ function resetSearchAndFilter() {
     moreButtonContainer.style.display = "none"; // 「もっと見る」ボタンを非表示
   }
 
-  applyFilters()
+
+  // 全議員数の表示を更新
+  document.getElementById("filteredItemCount").textContent = totalMemberCount + "名";
+
+  // グラフをリセットする
+  createChart(jsonDataFiltered);
 }
 
 fetchFilteredData();
