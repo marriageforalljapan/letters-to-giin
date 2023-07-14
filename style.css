@@ -53,6 +53,21 @@ header li {
   padding-top: 100px;
 }
 
+
+.title-tag{
+  display:flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  gap: 5px;
+}
+
+.heading02 span{
+  font-size: 12px;
+  color: #1A1A1A;
+}
+
+
 .heading02 {
 	position: relative;
 	font-size: 30px;
@@ -1032,6 +1047,18 @@ p{
     visibility: hidden,
   }
 
+  .title-tag{
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 5px;
+  }
+  
+  .heading02 span{
+    font-size: 16px;
+    color: #1A1A1A;
+  }
 
 }
 
@@ -1088,6 +1115,28 @@ p{
     visibility: hidden,
   }
 
+  
+  .title-tag{
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 5px;
+  }
+  
+  .heading02 span{
+    font-size: 20px;
+    color: #1A1A1A;
+  }
+
+  .heading02 {
+    position: relative;
+    font-size: 40px;
+    text-align: center;
+    border-bottom: 5px solid #dddddd;
+    margin-right: 15%;
+    margin-left: 15%;
+  }
 
 }
 
@@ -1147,6 +1196,19 @@ p{
 
 
   /*ページタイトル*/
+  .title-tag{
+    display:flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 10px;
+  }
+
+  .heading02 span{
+    font-size: 24px;
+    color: #1A1A1A;
+  }
+
   .heading02 {
     position: relative;
     font-size: 60px;
