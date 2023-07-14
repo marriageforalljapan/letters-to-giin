@@ -842,10 +842,6 @@ p{
   background:#01ba01;
 }
 
-.sign-off{
-  background-color: #f1f1f4;
-  margin-top: 300px;
-}
 
 /*バナー*/
 .banner {
@@ -1194,7 +1190,6 @@ p{
   }
 
 
-
   /*ページタイトル*/
   .title-tag{
     display:flex;
@@ -1233,9 +1228,9 @@ p{
 .contents-01 {
   position: relative;
   margin-top: 100px;
-  margin-left: 30%;
-  margin-right: 30%;
-  padding: 10px 30px;
+  margin-left: 35%;
+  margin-right: 35%;
+  padding: 10px 20px;
   overflow: hidden;
   border: 2px solid #2589d0;
   border-radius: 5px;
@@ -1248,7 +1243,7 @@ p{
   left: -30px;
   z-index: -1;
   transform: rotate(25deg);
-  width: 120px;
+  width: 90px;
   height: 200%;
   background-color: #2589d0;
   content: '';
@@ -1262,9 +1257,9 @@ p{
 
 .contents-02 {
   position: relative;
-  margin-left: 30%;
-  margin-right: 30%;
-  padding: 10px 30px;
+  margin-left: 35%;
+  margin-right: 35%;
+  padding: 10px 20px;
   overflow: hidden;
   border: 2px solid #2589d0;
   border-radius: 5px;
@@ -1277,7 +1272,7 @@ p{
   left: -30px;
   z-index: -1;
   transform: rotate(25deg);
-  width: 120px;
+  width: 90px;
   height: 200%;
   background-color: #2589d0;
   content: '';
@@ -1291,9 +1286,9 @@ p{
 
 .contents-03 {
   position: relative;
-  margin-left: 30%;
-  margin-right: 30%;
-  padding: 10px 30px;
+  margin-left: 35%;
+  margin-right: 35%;
+  padding: 10px 20px;
   overflow: hidden;
   border: 2px solid #2589d0;
   border-radius: 5px;
@@ -1306,7 +1301,7 @@ p{
   left: -30px;
   z-index: -1;
   transform: rotate(25deg);
-  width: 120px;
+  width: 90px;
   height: 200%;
   background-color: #2589d0;
   content: '';
@@ -1325,8 +1320,8 @@ p{
   padding-top: 1.5em;
   color: #1A1A1A;
   margin-top: 150px;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
   font-size: 40px;
   border-bottom:2px solid #6c6c6d;
 }
@@ -1343,13 +1338,72 @@ p{
   pointer-events: none;
 }
 
+
+
+
+.step-one-content{
+  margin-bottom: 100px;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 16px;
+  color: #1A1A1A;
+}
+
 .senkyo-table{
   display: block;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
   width: 80%;
   object-fit: cover;
   margin-top: 15px;
+}
+
+.search-form-002 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  overflow: hidden;
+  border: 2px solid #2589d0;
+  border-radius: 5px;
+  margin-left: 15%;
+  margin-right: 40%;
+  margin-top: -10px;
+}
+
+
+
+/*都道府県選択*/
+.prefecture-title{
+  margin-top: 30px;
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 10px;
+  color: #1A1A1A;
+  font-size:  20px;
+  font-weight: 600;
+}
+
+
+.selectbox-002 {
+  position: relative;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+p{
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+/*議員数*/
+#filteredItemCount {
+  position: absolute;
+  font-size: 25px;
+  font-weight: 700;
+  color:#1A1A1A;
+  left: 34.5%;
+  transform: translateX(-34.5%);
+  margin-top: -135px;
 }
 
 /*もっと見る*/
@@ -1379,143 +1433,223 @@ p{
   position: relative;
   padding: .5em 1.2em;
   color: #1A1A1A;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
   margin-top: 100px;
   font-size: 30px;
 }
 
-.heading-038::before,
-.heading-038::after {
-  display: inline-block;
+.senkyokusearch-content{
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-bottom: 200px;
+  font-size: 16px;
+  color: #1A1A1A;
+}
+
+/* 検索ボックスのスタイル */
+.controls {
   position: absolute;
-  transform: translateY(-50%);
-  width: 12px;
-  height: 12px;
+  margin-top: -150px;
+  margin-left: 15%;
+  margin-right: 15%;
+  background-color: #fff;
+  font-size: 12px;
+  font-weight: 300;
+  padding: 10px 15px 10px 15px;
+  width: 50%;
+  text-overflow: ellipsis;
   border: 2px solid #2589d0;
-  content: '';
+  border-radius: 5px;
 }
 
-.heading-038::before {
-  top: calc(50% - 3px);
-  left: 0;
-}
-
-.heading-038::after {
-  top: calc(50% + 3px);
-  left: 5px;
-}
 
 .senkyokumap {
   position: relative; /* 相対位置指定に変更 */
   margin-top: -50px;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
   height: 70vh; /* 画面の縦方向の半分の高さ */
 }
 
 /*step-two*/
 .heading-2 {
   position: relative;
-  padding-top: 1.5em;
+  padding-top: 4em;
   color: #1A1A1A;
-  margin-top: 150px;
-  margin-left: 5%;
-  margin-right: 5%;
-  font-size: 40px;
+  margin-top: 100px;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 26px;
   border-bottom:2px solid #6c6c6d;
 }
 
-.heading-2::before {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  color: #d9f4ff;
-  font-size: 3em;
-  line-height: 1;
-  content: attr(data-number);
-  pointer-events: none;
+  
+.attention-title{
+  margin-top: 45px;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #EC0000;
 }
 
+.attention-content{ 
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 16px;
+  color: #1A1A1A;
+}
 
-.search-form-002 {
+.heading-039 {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  overflow: hidden;
-  border: 2px solid #2589d0;
-  border-radius: 5px;
-  margin-left: 5%;
-  margin-right: 50%;
+  margin-left: 15%;
+  margin-top: 50px;
+  gap: 0 7px;
+  color: #1A1A1A;
+  font-size: 20px;
 }
 
-.search-form-002 input {
-  height: 45px;
-  padding: 5px 15px;
-  border: none;
-  box-sizing: border-box;
-  font-size: 14px;
-  outline: none;
+
+.howtowrite-title p{
+  margin-left: 15%;
+  margin-right: 15%;
+  margin-top: 10px;
+  font-size: 16px;
+  color: #1A1A1A;
 }
 
-.search-form-002 input::placeholder{
-  color: #767d83;
-}
-
-.search-form-002 button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 45px;
-  height: 45px;
-  border: none;
-  background-color: #2589d0;
-  cursor: pointer;
-}
-
-.search-form-002 button::after {
-  width: 20px;
-  height: 20px;
-  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2024%2024%22%3E%20%3Cpath%20d%3D%22M23.7%2020.8%2019%2016.1c-.2-.2-.5-.3-.8-.3h-.8c1.3-1.7%202-3.7%202-6C19.5%204.4%2015.1%200%209.7%200S0%204.4%200%209.7s4.4%209.7%209.7%209.7c2.3%200%204.3-.8%206-2v.8c0%20.3.1.6.3.8l4.7%204.7c.4.4%201.2.4%201.6%200l1.3-1.3c.5-.5.5-1.2.1-1.6zm-14-5.1c-3.3%200-6-2.7-6-6s2.7-6%206-6%206%202.7%206%206-2.6%206-6%206z%22%20fill%3D%22%23fff%22%3E%3C%2Fpath%3E%20%3C%2Fsvg%3E');
-  background-repeat: no-repeat;
-  content: '';
+.howtowrite-content{
+  margin-top: 25px;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 1em 1em 1em 1em;
+  background-color: #f1f1f4;
 }
 
 
 /*step-three*/
 .heading-3 {
   position: relative;
-  padding-top: 1.5em;
+  padding-top: 4em;
   color: #1A1A1A;
-  margin-top: 150px;
-  margin-left: 5%;
-  margin-right: 5%;
-  font-size: 40px;
+  margin-top: 100px;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 26px;
   border-bottom:2px solid #6c6c6d;
 }
 
-.heading-3::before {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  color: #d9f4ff;
-  font-size: 3em;
-  line-height: 1;
-  content: attr(data-number);
-  pointer-events: none;
+
+
+.step-three-content{
+  margin-top: 55px;
+  margin-bottom: -15px;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 16px;
+  color: #1A1A1A;
 }
+
+.attention-2{
+  margin-top: 55px;
+  margin-left: 15%;
+  margin-right: 15%;
+  font-size: 16px;
+  color: #EC0000;
+}
+
+  
+/*シェアボタン*/
+.snssharer {
+  margin-top: 50px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+.snssharer span a {
+    width: 20%;
+    float: left;
+    display: block;
+    border: solid 2px #333;
+    border-radius: 5px;
+    padding: 0.5rem 0.7rem;
+    text-align: center;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.snssharer .twitter a {
+    color: #28aae1;
+    border-color: #28aae1;
+    margin-right: 30px;
+}
+
+
+
+.snssharer .facebook a {
+  color: #3c5a99;
+  border-color: #3c5a99;
+  margin-right: 30px;
+}
+
+
 
 .banner {
   display: block;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 15%;
+  margin-right: 15%;
   margin-top: 100px;
   margin-bottom: 50px;
-  width: 70%;
+  width: 60%;
   aspect-ratio: 3 / 2;
   object-fit: cover;
+}
+
+
+/*手紙を書こうリーフレット*/
+/*閲覧用*/
+.button-view {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  margin-left: 15%;
+  padding: .5em 0.5em;
+  border: none;
+  border-radius: 5px;
+  background-color: #2589d0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+/*印刷用*/
+.button-print {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 150px;
+  margin-left: 5%;
+  margin-right: 15%;
+  padding: .5em  0.5em;
+  border: none;
+  border-radius: 5px;
+  background-color: #2589d0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+
+
+.kokkaimeter-logo{
+  display: flex;
+  width: 200px;
+  margin-left: 15%;
+  margin-bottom: 100px;
 }
 
 
