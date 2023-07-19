@@ -1576,14 +1576,15 @@ p{
 /*step-two*/
 .heading-2 {
   position: relative;
-  padding-top: 4em;
+  padding-top: 1.5em;
   color: #1A1A1A;
-  margin-top: 100px;
+  margin-top: 150px;
   margin-left: 20%;
   margin-right: 20%;
-  font-size: 26px;
+  font-size: 40px;
   border-bottom:2px solid #6c6c6d;
 }
+
 
   
 .attention-title{
@@ -1633,15 +1634,14 @@ p{
 /*step-three*/
 .heading-3 {
   position: relative;
-  padding-top: 4em;
+  padding-top: 1.5em;
   color: #1A1A1A;
-  margin-top: 100px;
+  margin-top: 150px;
   margin-left: 20%;
   margin-right: 20%;
-  font-size: 26px;
+  font-size: 40px;
   border-bottom:2px solid #6c6c6d;
 }
-
 
 
 .step-three-content{
