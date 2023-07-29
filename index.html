@@ -31,8 +31,8 @@
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA92lxiGSFgBAVYrhoS9tyZ4iwj2GTWXIQ&callback=initAutocomplete&libraries=places,marker&v=weekly"
       defer
     ></script>
-    <link rel="icon" href="img/favicon.ico">
-    <link rel="apple-touch-icon" href="img/favicon.ico">
+    <link rel="icon" href="img/favicon-2.ico">
+    <link rel="apple-touch-icon" href="img/favicon-2.ico">
     <link rel="stylesheet" type="text/css" href="./style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -229,12 +229,16 @@
             <div class="card-content">
               <div class="card">
                 <div class="photo-container">
-                  <p><img data-photo alt="写真"></p>
+                  <p><img data-photo alt="写真" class="giin-image"></p>
                 </div>
                 <div class="info">
                   <div class="sanpi" data-sanpi></div>
                   <div class="kana" data-kana></div>
-                  <div class="name" data-name></div>
+                  <div class="flex-box">
+                    <div class="name" data-name></div>
+                    <img src="/Users/kanagawachikairyou/Downloads/lettes-to-giin-test/img/letter_icon.png" class="letter-icon">
+                    <div class="letter" data-letter></div>
+                  </div>
                   <div class="tag">
                     <div class="house" data-house></div>
                     <div class="senkyoku" data-senkyoku></div>
