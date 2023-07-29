@@ -29,6 +29,7 @@ function createCards(data, startIndex, endIndex) {
     cardElement.querySelector("[data-area]").textContent = item["区"];
     cardElement.querySelector("[data-page]").setAttribute("href", item["個別ページ"]);
     cardElement.querySelector("[data-photo]").setAttribute("src", item["img"]);
+    cardElement.querySelector("[data-letter]").textContent = item["手紙枚数"];
 
     var sanpiElement = cardElement.querySelector("[data-sanpi]");
     var sanpiValue = item["賛否"];
