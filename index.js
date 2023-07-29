@@ -224,6 +224,32 @@ function setButtonStyle(button) {
   button.classList.add("active");
 }
 
+$(document).ready(function() {
+  // 議員のJSONデータを取得
+  const url = 'https://raw.githubusercontent.com/marriageforalljapan/letters-to-giin/main/giin.json';
+  fetchJSON(url, function(data) {
+    // 議員の名前の配列を作成
+    const politicianDataArray = data.map(item => ({
+      name: item["氏名"],
+      kana: item["かな"]
+    }));
+
+    // オートコンプリートを議員の名前で初期化します
+    $("#searchInput").autocomplete({
+      source: function(request, response) {
+        const term = request.term.toLowerCase();
+        const matchedPoliticians = politicianDataArray.filter(item =>
+          item.name.toLowerCase().startsWith(term) || item.kana.toLowerCase().startsWith(term)
+        );
+
+        const matchedNames = matchedPoliticians.map(item => item.name);
+        response(matchedNames);
+      }
+    });
+  });
+});
+
+
 function searchByName() {
   var searchInput = document.getElementById("searchInput");
   currentFilters.name = searchInput.value.trim().toLowerCase();
