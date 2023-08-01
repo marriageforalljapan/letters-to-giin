@@ -450,7 +450,7 @@ p{
 
 .card {
   width: 220px;
-  height: 430px;
+  height: 470px;
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 5px 20px;
@@ -513,6 +513,26 @@ img.letter-icon{
   font-size: 16px;
   color: rgb(223, 86, 86);
   font-weight: 300;
+}
+
+.link{
+  display: flex;
+  gap: 20px;
+  margin-bottom: 5px;
+}
+
+.website img,.blog img,.twitter img,.facebook img{
+  width: 20px;
+  height: 20px;
+}
+
+[data-website]:not([href]) img,
+[data-blog]:not([href]) img,
+[data-twitter]:not([href]) img,
+[data-facebook]:not([href]) img  {
+  width: 20px;
+  height: 20px;
+  opacity: 0.3;
 }
 
 .tag{
