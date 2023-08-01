@@ -17,6 +17,7 @@ function createCards(data, startIndex, endIndex) {
   for (var i = startIndex; i < endIndex; i++) {
     var item = data[i];
     var cardElement = cardTemplate.cloneNode(true).querySelector(".card");
+
     cardElement.querySelector("[data-name]").textContent = item["氏名"];
     cardElement.querySelector("[data-kana]").textContent = item["かな"];
     cardElement.querySelector("[data-house]").textContent = item["衆参"];
@@ -29,6 +30,30 @@ function createCards(data, startIndex, endIndex) {
     cardElement.querySelector("[data-area]").textContent = item["区"];
     cardElement.querySelector("[data-page]").setAttribute("href", item["個別ページ"]);
     cardElement.querySelector("[data-photo]").setAttribute("src", item["img"]);
+   // もし値がnullの場合にdata-nullクラスを追加
+    if (!item["WEBサイト"]) {
+      cardElement.querySelector("[data-website]").classList.add("data-null");
+    } else {
+      cardElement.querySelector("[data-website]").setAttribute("href", item["WEBサイト"]);
+    }
+
+    if (!item["ブログ"]) {
+      cardElement.querySelector("[data-blog]").classList.add("data-null");
+    } else {
+      cardElement.querySelector("[data-blog]").setAttribute("href", item["ブログ"]);
+    }
+
+    if (!item["Twitter"]) {
+      cardElement.querySelector("[data-twitter]").classList.add("data-null");
+    } else {
+      cardElement.querySelector("[data-twitter]").setAttribute("href", item["Twitter"]);
+    }
+
+    if (!item["Facebook"]) {
+      cardElement.querySelector("[data-facebook]").classList.add("data-null");
+    } else {
+      cardElement.querySelector("[data-facebook]").setAttribute("href", item["Facebook"]);
+    }
     cardElement.querySelector("[data-letter]").textContent = item["手紙枚数"];
 
     var sanpiElement = cardElement.querySelector("[data-sanpi]");
@@ -87,6 +112,8 @@ function fetchFilteredData() {
 function countTotalMembers(data) {
   return data.length;
 }
+
+
 
 function showMoreItems() {
   var startIndex = currentIndex; // 現在のインデックスを保持
