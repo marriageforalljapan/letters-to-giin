@@ -92,10 +92,10 @@ var maxItemsToShow = 12; // 一度に表示する最大項目数
 var currentIndex = 0; // 現在のインデックス
 var currentFilters = {
   name: "",
-  house: "",
+  house: [],
   prefecture: "",
-  party: "",
-  sanpi: ""
+  party: [],
+  sanpi: []
 };
 
 function fetchFilteredData() {
@@ -209,18 +209,49 @@ function createChart(filteredData) {
   });
 }
 
+function sortByName(filteredData) {
+  return filteredData.sort((a, b) => a["かな"].localeCompare(b["かな"]));
+}
+
+function sortByParty(filteredData) {
+  return filteredData.sort((a, b) => a["政党"].localeCompare(b["政党"]));
+}
+
+function sortBySanpi(filteredData) {
+  return filteredData.sort((a, b) => {
+    const sanpiOrder = {
+      "1.賛成": 1,
+      "2.どちらかと言えば賛成": 2,
+      "3.どちらとも言えない": 3,
+      "4.どちらかと言えば反対": 4,
+      "5.反対": 5,
+      "6.無回答": 6,
+    };
+    return sanpiOrder[a["賛否"]] - sanpiOrder[b["賛否"]];
+  });
+}
+
 function applyFilters() {
   currentIndex = maxItemsToShow;
   clearCards();
 
   var filteredData = jsonData.filter(function(item) {
     var nameMatch = currentFilters.name === "" || item["氏名"].toLowerCase().includes(currentFilters.name);
-    var houseMatch = currentFilters.house === "" || item["衆参"].includes(currentFilters.house);
+    var houseMatch = currentFilters.house.length === 0 || currentFilters.house.includes(item["衆参"]);
     var prefectureMatch = currentFilters.prefecture === "" || item["都道府県"] === currentFilters.prefecture;
-    var partyMatch = currentFilters.party === "" || item["政党"].includes(currentFilters.party);
-    var sanpiMatch = currentFilters.sanpi === "" || item["賛否"].includes(currentFilters.sanpi);
+    var partyMatch = currentFilters.party.length === 0 || currentFilters.party.includes(item["政党"]);
+    var sanpiMatch = currentFilters.sanpi.length === 0 || currentFilters.sanpi.includes(item["賛否"]);
     return nameMatch && houseMatch && prefectureMatch && sanpiMatch && partyMatch;
   });
+
+  // 選択したフィルターに基づいてデータをソート
+  if (currentFilters.sort === "kana") {
+    filteredData = sortByName(filteredData);
+  } else if (currentFilters.sort === "party") {
+    filteredData = sortByParty(filteredData);
+  } else if (currentFilters.sort === "sanpi") {
+    filteredData = sortBySanpi(filteredData);
+  }
 
   var filteredItemCount = filteredData.length; // ヒット件数
   jsonDataFiltered = filteredData; // フィルター後のデータを保持
@@ -239,6 +270,27 @@ function applyFilters() {
 
   // グラフの作成
   createChart(filteredData);
+
+  // 「氏名」でソートするボタンにイベントリスナーを追加
+  document.getElementById("sortByName").addEventListener("click", function() {
+    currentFilters.sort = "kana";
+    applyFilters();
+    setSortButtonActive("sortByName");
+  });
+
+  // 「政党」でソートするボタンにイベントリスナーを追加
+  document.getElementById("sortByParty").addEventListener("click", function() {
+    currentFilters.sort = "party";
+    applyFilters();
+    setSortButtonActive("sortByParty");
+  });
+
+  // 「賛否」でソートするボタンにイベントリスナーを追加
+  document.getElementById("sortBySanpi").addEventListener("click", function() {
+    currentFilters.sort = "sanpi";
+    applyFilters();
+    setSortButtonActive("sortBySanpi");
+  });
 }
 
 
@@ -252,6 +304,20 @@ function setButtonStyle(button) {
   button.classList.add("active");
 }
 
+// 選択されたソートボタンにactiveクラスを付与
+function setSortButtonActive(buttonId) {
+  var sortButtons = document.querySelectorAll("#sortbyoptions button");
+  sortButtons.forEach(function (button) {
+    if (button.id === buttonId) {
+      button.classList.add("active"); // 選択中のボタンにactiveクラスを追加
+    } else {
+      button.classList.remove("active"); // 選択されていないボタンからactiveクラスを削除
+    }
+  });
+}
+
+
+//議員名サジェスト機能
 $(document).ready(function() {
   // 議員のJSONデータを取得
   const url = 'https://raw.githubusercontent.com/marriageforalljapan/letters-to-giin/main/giin.json';
@@ -301,57 +367,63 @@ function filterByPrefecture() {
 
 function filterByHouse(house) {
   clearCards(); // 表示中のカードをクリア
-  if (currentFilters.house === house) {
-    currentFilters.house = ""; // 同じボタンがクリックされた場合はフィルターを解除
+  var index = currentFilters.house.indexOf(house);
+
+  if (index !== -1) {
+    currentFilters.house.splice(index, 1); // 同じボタンがクリックされた場合はフィルターを解除
   } else {
-    currentFilters.house = house; // フィルターを選択
-  };
-  fetchFilteredData();
+    currentFilters.house.push(house); // フィルターを選択
+  }
+  applyFilters();
 
   var houseButtons = document.querySelectorAll("#filterbyhouse button");
   houseButtons.forEach(function (button) {
-    if (button.textContent === house) {
-      button.classList.toggle("active-house"); // 選択中のボタンにactive-houseクラスを追加・削除
+    if (currentFilters.house.includes(button.textContent)) {
+      button.classList.add("active-house"); // ボタンが選択されている場合にactive-houseクラスを追加
     } else {
-      button.classList.remove("active-house"); // 選択されていないボタンからactive-houseクラスを削除
+      button.classList.remove("active-house"); // ボタンが選択されていない場合にactive-houseクラスを削除
     }
   });
 }
 
 function filterByParty(party) {
   clearCards(); // 表示中のカードをクリア
-  if (currentFilters.party === party) {
-    currentFilters.party = ""; // 同じボタンがクリックされた場合はフィルターを解除
+  var index = currentFilters.party.indexOf(party);
+
+  if (index !== -1) {
+    currentFilters.party.splice(index, 1); // 同じボタンがクリックされた場合はフィルターを解除
   } else {
-    currentFilters.party = party; // フィルターを選択
-  };
-  fetchFilteredData();
-  
+    currentFilters.party.push(party); // フィルターを選択
+  }
+  applyFilters();
+
   var partyButtons = document.querySelectorAll("#filterbyparty button");
   partyButtons.forEach(function (button) {
-    if (button.textContent === party) {
-      button.classList.toggle("active-party"); // 選択中のボタンにactive-partyクラスを追加・削除
+    if (currentFilters.party.includes(button.textContent)) {
+      button.classList.add("active-party"); // ボタンが選択されている場合にactive-partyクラスを追加
     } else {
-      button.classList.remove("active-party"); // 選択されていないボタンからactive-partyクラスを削除
+      button.classList.remove("active-party"); // ボタンが選択されていない場合にactive-partyクラスを削除
     }
   });
 }
 
 function filterBySanpi(sanpi) {
   clearCards(); // 表示中のカードをクリア
-  if (currentFilters.sanpi === sanpi) {
-    currentFilters.sanpi = ""; // 同じボタンがクリックされた場合はフィルターを解除
+  var index = currentFilters.sanpi.indexOf(sanpi);
+
+  if (index !== -1) {
+    currentFilters.sanpi.splice(index, 1); // 同じボタンがクリックされた場合はフィルターを解除
   } else {
-    currentFilters.sanpi = sanpi; // フィルターを選択
-  };
-  fetchFilteredData();
-  
+    currentFilters.sanpi.push(sanpi); // フィルターを選択
+  }
+  applyFilters();
+
   var sanpiButtons = document.querySelectorAll("#filterbysanpi button");
   sanpiButtons.forEach(function (button) {
-    if (button.textContent === sanpi) {
-      button.classList.toggle("active-sanpi"); // 選択中のボタンにactive-sanpiクラスを追加・削除
+    if (currentFilters.sanpi.includes(button.textContent)) {
+      button.classList.add("active-sanpi"); // ボタンが選択されている場合にactive-sanpiクラスを追加
     } else {
-      button.classList.remove("active-sanpi"); // 選択されていないボタンからactive-sanpiクラスを削除
+      button.classList.remove("active-sanpi"); // ボタンが選択されていない場合にactive-sanpiクラスを削除
     }
   });
 }
@@ -378,12 +450,18 @@ function resetSearchAndFilter() {
       button.classList.remove("active-sanpi"); // active-sanpiクラスを削除
   });
 
+  var sortButtons = document.querySelectorAll("#sortbyoptions button");
+  sortButtons.forEach(function (button) {
+      button.classList.remove("active"); // active-sanpiクラスを削除
+  });
+
   currentIndex = maxItemsToShow;
   currentFilters.name = "";
-  currentFilters.house = "";
+  currentFilters.house = [];
   currentFilters.prefecture = "";
-  currentFilters.party = "";
-  currentFilters.sanpi = ""; // 賛否フィルターをリセット
+  currentFilters.party = [];
+  currentFilters.sanpi = [];
+  currentFilters.sort = "",
 
   clearCards();
   jsonDataFiltered = jsonData; // データをリセット
