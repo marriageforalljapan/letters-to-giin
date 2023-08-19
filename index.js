@@ -88,7 +88,7 @@ function clearCards() {
 
 var jsonData; // JSONデータを保持する変数
 var totalMemberCount = 0; // 全議員数を保持する変数
-var maxItemsToShow = 12; // 一度に表示する最大項目数
+var maxItemsToShow = 4; // 一度に表示する最大項目数
 var currentIndex = 0; // 現在のインデックス
 var currentFilters = {
   name: "",
