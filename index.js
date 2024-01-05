@@ -209,27 +209,44 @@ function createChart(filteredData) {
   });
 }
 
-function sortByName(filteredData) {
-  return filteredData.sort((a, b) => a["かな"].localeCompare(b["かな"]));
+
+
+var currentSortOrder = {
+  kana: "asc",
+  letter: "asc",
+  party: "asc",
+  sanpi: "asc"
+};
+
+function sortByKana(filteredData) {
+  return filteredData.sort((a, b) => {
+    const orderMultiplier = (currentSortOrder.kana === "asc") ? 1 : -1;
+    return orderMultiplier * a["かな"].localeCompare(b["かな"]);
+  });
+}
+
+function sortByLetter(filteredData) {
+  return filteredData.sort((a, b) => {
+    const orderMultiplier = (currentSortOrder.letter === "asc") ? 1 : -1;
+    return orderMultiplier * (parseInt(a["手紙枚数"]) - parseInt(b["手紙枚数"]));
+  });
 }
 
 function sortByParty(filteredData) {
-  return filteredData.sort((a, b) => a["政党"].localeCompare(b["政党"]));
+  return filteredData.sort((a, b) => {
+    const orderMultiplier = (currentSortOrder.party === "asc") ? 1 : -1;
+    return orderMultiplier * a["政党"].localeCompare(b["政党"]);
+  });
 }
 
 function sortBySanpi(filteredData) {
   return filteredData.sort((a, b) => {
-    const sanpiOrder = {
-      "1.賛成": 1,
-      "2.どちらかと言えば賛成": 2,
-      "3.どちらとも言えない": 3,
-      "4.どちらかと言えば反対": 4,
-      "5.反対": 5,
-      "6.無回答": 6,
-    };
-    return sanpiOrder[a["賛否"]] - sanpiOrder[b["賛否"]];
+    const orderMultiplier = (currentSortOrder.sanpi === "asc") ? 1 : -1;
+    return orderMultiplier * (parseInt(a["賛否"].split(".")[0]) - parseInt(b["賛否"].split(".")[0]));
   });
 }
+
+
 
 function applyFilters() {
   currentIndex = maxItemsToShow;
@@ -246,15 +263,22 @@ function applyFilters() {
 
   // 選択したフィルターに基づいてデータをソート
   if (currentFilters.sort === "kana") {
-    filteredData = sortByName(filteredData);
+    console.log(currentSortOrder);  // 追加
+    filteredData = sortByKana(filteredData);
   } else if (currentFilters.sort === "party") {
+    console.log(currentSortOrder);  // 追加
     filteredData = sortByParty(filteredData);
   } else if (currentFilters.sort === "sanpi") {
+    console.log(currentSortOrder);  // 追加
     filteredData = sortBySanpi(filteredData);
+  } else if (currentFilters.sort === "letter") {
+    filteredData = sortByLetter(filteredData);
+    console.log(currentSortOrder);  // 追加
   }
 
   var filteredItemCount = filteredData.length; // ヒット件数
   jsonDataFiltered = filteredData; // フィルター後のデータを保持
+  
 
   createCards(filteredData, 0, Math.min(maxItemsToShow, filteredData.length));
 
@@ -274,6 +298,7 @@ function applyFilters() {
   // 「氏名」でソートするボタンにイベントリスナーを追加
   document.getElementById("sortByName").addEventListener("click", function() {
     currentFilters.sort = "kana";
+    currentSortOrder.kana = (currentSortOrder.kana === "asc") ? "desc" : "asc";
     applyFilters();
     setSortButtonActive("sortByName");
   });
@@ -281,6 +306,7 @@ function applyFilters() {
   // 「政党」でソートするボタンにイベントリスナーを追加
   document.getElementById("sortByParty").addEventListener("click", function() {
     currentFilters.sort = "party";
+    currentSortOrder.party = (currentSortOrder.party === "asc") ? "desc" : "asc";
     applyFilters();
     setSortButtonActive("sortByParty");
   });
@@ -288,11 +314,20 @@ function applyFilters() {
   // 「賛否」でソートするボタンにイベントリスナーを追加
   document.getElementById("sortBySanpi").addEventListener("click", function() {
     currentFilters.sort = "sanpi";
+    currentSortOrder.sanpi = (currentSortOrder.sanpi === "asc") ? "desc" : "asc";
     applyFilters();
     setSortButtonActive("sortBySanpi");
   });
-}
 
+  // 「手紙の枚数」でソートするボタンにイベントリスナーを追加
+  document.getElementById("sortByLetter").addEventListener("click", function() {
+    currentFilters.sort = "letter";
+    currentSortOrder.letter = (currentSortOrder.letter === "asc") ? "desc" : "asc";
+    applyFilters();
+    setSortButtonActive("sortByLetter");
+  });
+
+}
 
 
 // ボタンのクリック時にスタイルを設定する関数
@@ -444,16 +479,23 @@ function resetSearchAndFilter() {
   partyButtons.forEach(function (button) {
       button.classList.remove("active-party"); // active-partyクラスを削除
   });
+  
 
   var sanpiButtons = document.querySelectorAll("#filterbysanpi button");
   sanpiButtons.forEach(function (button) {
       button.classList.remove("active-sanpi"); // active-sanpiクラスを削除
   });
 
+  var letterButtons = document.querySelectorAll("#filterbyletter button");
+  letterButtons.forEach(function (button) {
+      button.classList.remove("active-letter"); // active-partyクラスを削除
+  });
+
   var sortButtons = document.querySelectorAll("#sortbyoptions button");
   sortButtons.forEach(function (button) {
       button.classList.remove("active"); // active-sanpiクラスを削除
   });
+
 
   currentIndex = maxItemsToShow;
   currentFilters.name = "";
@@ -777,7 +819,6 @@ function initAutocomplete() {
   }
 });
      
-   
    
      // GeoJSONファイルの読み込み
      // Add the feature layer.
