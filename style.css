@@ -362,7 +362,7 @@ p{
 }
 
 
-#filterbyhouse button,#filterbysanpi button,#filterbyparty button,#sortbyoptions button{
+#filterbyhouse button,#filterbysanpi button,#filterbyparty button,#filterbyletter button,#sortbyoptions button{
     padding: 5px 15px;
     border:0px solid #2589d0;
     border-radius: 5px;
